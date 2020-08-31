@@ -178,12 +178,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Eftersalgsservice.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
-    <Content Include="Views\Home\Product_view.cshtml" />
-    <Content Include="Views\Home\StandardSeries.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\StandardSeries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

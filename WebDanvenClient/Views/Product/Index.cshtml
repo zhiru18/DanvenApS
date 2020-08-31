@@ -1,4 +1,5 @@
-﻿@model WebDanvenClient.Models.Product
+﻿
+@model WebDanvenClient.Models.Product
 
 @{
     ViewBag.Title = "Product_view";
@@ -21,13 +22,14 @@
                         Standard series
                     </button>
                     <ul class="dropdown-menu">
-                        @for(int i =0; i<Model.products.Count; i++) {
-                            int a = i + 1;
-                            <a href="https://localhost:44381/Home/StandardSeries/@a" target="_blank">
+                        @for (int i = 0; i < Model.products.Count; i++) {
+                            int b = i + 1;
+                            <a href= '@Url.Action("StandardSeries", "Product", new {Id = @b })' target="_blank">
                                 <li>@Model.products[i]</li>
-                              </a>               
+                            </a>
+
                         }
-                        </ul>
+                    </ul>
                 </div>
             </div>
         </div>
