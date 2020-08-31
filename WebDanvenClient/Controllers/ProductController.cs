@@ -9,7 +9,7 @@ namespace WebDanvenClient.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             return View();
         }
