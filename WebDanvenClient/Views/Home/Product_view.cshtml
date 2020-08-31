@@ -1,0 +1,47 @@
+﻿@model WebDanvenClient.Models.Product
+
+@{
+    ViewBag.Title = "Product_view";
+}
+@Styles.Render("~/Content/ProductView.css")
+
+
+
+@if (ViewBag.Situation == 1) {
+    <h2>
+        @ViewBag.Title 1
+    </h2>
+    <body>
+        <div class="left">
+            <br />
+            <br />
+            <div class="dropdown">
+                <div class="dropdown" style="display:inline-block">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server" style=" background-color:lawngreen">
+                        Standard series
+                    </button>
+                    <ul class="dropdown-menu">
+                        @for(int i =0; i<Model.products.Count; i++) {
+                            int a = i + 1;
+                            <a href="https://localhost:44381/Home/StandardSeries/@a" target="_blank">
+                                <li>@Model.products[i]</li>
+                              </a>               
+                        }
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </body>
+} else if (ViewBag.Situation == 2) {
+    <h2>
+        @ViewBag.Title 2
+    </h2>
+
+} else if (ViewBag.Situation == 3) {
+    <h2>
+        @ViewBag.Title 3
+    </h2>
+
+}

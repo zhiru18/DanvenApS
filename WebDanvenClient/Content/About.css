@@ -1,0 +1,50 @@
+﻿body {
+    max-width: 1200px;
+    max-height: 1200px;
+    background-color: lightblue;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    left: 150px;
+    right: 150px;
+    background-color: lightgray;
+    height: 150px;
+}
+
+.right {
+    position: absolute;
+    right: 0px;
+    width: 650px;
+    height: 100%;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.left {
+    position:absolute;
+    left: 150px;
+    height: 100%;
+    width: 500px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.top {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    height: 600px;
+    background-image:url(~/Photoes/decorative-water-wave-background_23-2147608380.jpg);
+}
+
+

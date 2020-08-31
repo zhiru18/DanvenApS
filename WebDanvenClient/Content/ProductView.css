@@ -1,0 +1,28 @@
+﻿body {
+    max-width: 1200px;
+    max-height: 1200px;
+    background-color: lightblue;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.right {
+    position: absolute;
+    left: 300px;
+    width: 900px;
+    height: 100%;
+    text-align: left;
+    background-color: greenyellow;
+}
+
+.left {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    text-align: center;
+    background-color: lightpink;
+}

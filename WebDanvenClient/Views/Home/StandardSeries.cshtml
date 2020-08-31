@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "StandardSeries";
+}
+@Styles.Render("~/Content/ProductView.css")
+
+<h2>StandardSeries</h2>
+@if (ViewBag.Situation == 1) {
+    <h2>
+        @ViewBag.Title 1
+    </h2>
+
+} else if (ViewBag.Situation == 2) {
+    <h2>
+        @ViewBag.Title 2
+    </h2>
+
+} else if (ViewBag.Situation == 3) {
+    <h2>
+        @ViewBag.Title 3
+    </h2>
+}

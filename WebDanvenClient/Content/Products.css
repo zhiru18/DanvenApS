@@ -1,0 +1,54 @@
+﻿body {
+    max-width: 1200px;
+    max-height: 1200px;
+    background-color: lightblue;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.bottomLeft {
+    position: absolute;
+    bottom: 0px;
+    top: 850px;
+    text-align: center;
+    left: 200px;
+    width: 550px;
+    background-color: lightblue;
+    height: 100%;
+}
+
+.bottomRight {
+    position: absolute;
+    bottom: 0px;
+    top: 850px;
+    right: 0px;
+    width: 550px;
+    height: 100%;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.topLeft {
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    bottom: 850px;
+    height: 100%;
+    width: 550px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.topRight {
+    position: absolute;
+    top: 200px;
+    bottom: 850px;
+    width: 550px;
+    right: 0px;
+    text-align: center;
+    height: 100%;
+    background-color: lightblue;
+}

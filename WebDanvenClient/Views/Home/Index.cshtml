@@ -1,0 +1,49 @@
+﻿@{ ViewBag.Title = "Home Page";
+
+}
+@Styles.Render("~/Content/Homestyle.css")
+
+<h2>
+    @ViewBag.Title
+</h2>
+
+
+<body>
+    <div class="top" style="background-image: url('@Url.Content("~/Photoes/decorative-water-wave-background_23-2147608380.jpg")')">
+        <text x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+            <h3>Clean and safe solutions to control  <br />and prevent bacteria</h3>
+            <br />
+
+            Here at Danven ApS, we provide a natural and non-toxic solution to preventing  and controlling  <br />
+            bacteria in water systems and on surfaces. Our disinfection units and in-house disinfectant liquid,<br />
+            NEUTHOX®, work together to eliminate bacteria, including Legionella, and act fast to destroy bacteria <br />
+            breeding grounds known as biofilms.
+        </text>
+        <br />
+        <br />
+        <div class="button">
+            <input type="button" style="background-color: aquamarine" value="Contact us" onclick="location.href='@Url.Action("Contact","Home")'" />
+            <input type="button" value="Our procuscts" onclick="location.href='@Url.Action("Products","Home")'" />
+        </div>
+        
+    </div>
+    <div class="bottom">
+        <img src="~/Photoes/home page1.png" alt="Girl in a jacket" width="965" height="200" style="position:relative; top:10px">
+        <br />
+        <h3 style="fill:aquamarine">
+            Benefits of DCW’s solution:
+        </h3>
+        <br />
+
+        <text x="0" y="20" font-family="Verdana" font-size="36" fill="black">
+
+            MINIMAL MAINTENANCE: On-going daily maintenance not required.<br />
+            ECONOMIC BENEFITS: Save energy and reduce overheads<br />
+            PREVENT BACTERIA: Proven method of eliminating bacteria<br />
+            MODERN TECHNOLOGY: Enjoy simple setup and easy maintenance.<br />
+            LOW COSTS: Keep operating costs at a minimum.<br />
+            PROTECT THE ENVIRONMENT: Eco-friendly, non-toxic, solution.
+        </text>
+    </div>
+
+</body>
