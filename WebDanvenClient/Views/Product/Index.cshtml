@@ -8,7 +8,7 @@
 
 
 
-@if (ViewBag.Situation == 1) {
+@if (ViewBag.Situation <2) {
     <h2>
         @ViewBag.Title 1
     </h2>
@@ -18,22 +18,74 @@
             <br />
             <div class="dropdown">
                 <div class="dropdown" style="display:inline-block">
-                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server" style=" background-color:lawngreen">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server" 
+                            style="background-color: lawngreen; width:155px; height:35px">
                         Standard series
                     </button>
                     <ul class="dropdown-menu">
                         @for (int i = 0; i < Model.products.Count; i++) {
                             int b = i + 1;
-                            <a href= '@Url.Action("StandardSeries", "Product", new {Id = @b })' target="_blank">
-                                <li>@Model.products[i]</li>
-                            </a>
-
+                            <li onclick="location.href='@Url.Action("StandardSeries", "Product", new {Id = @b })'">@Model.products[i]</li>
                         }
                     </ul>
                 </div>
             </div>
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server" 
+                    style=" background-color:lightgrey; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+                Low chlorine series
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server" 
+                    style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                Gardening series
+            </button>
         </div>
         <div class="right">
+            <img src="~/Photoes/prod1.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+            <br />
+            <br />
+            <br />
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                Standard series
+            </h3>
+            <br />
+            <br />
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                DCW disinfection generator-standard series
+                <br />
+                The standard series unit is electrolyzed by mixing 0.5% saturated brine and
+                <br />
+                99.5% demineralized water. According to the different production capacity of
+                <br />
+                each type of unit, it is widely used in sterilization and disinfection in
+                <br />
+                various fields such as medical industry and food processing.
+            </h3>
+            <div class="bottomLeft">
+                <a href='@Url.Action("StandardSeries", "Product", new {Id = 1})' target="_blank">
+                    <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                        T05-STD Parameter Table
+                    </h3>
+                </a>
+                <br />
+                <a href='@Url.Action("StandardSeries", "Product", new {Id = 2})' target="_blank">
+                    <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                        T15-STD Parameter Table
+                    </h3>
+                </a>
+                <br />
+                <a href='@Url.Action("StandardSeries", "Product", new {Id = 3})' target="_blank">
+                    <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                        T25-STD Parameter Table
+                    </h3>
+                </a>
+            </div>
         </div>
     </body>
 } else if (ViewBag.Situation == 2) {

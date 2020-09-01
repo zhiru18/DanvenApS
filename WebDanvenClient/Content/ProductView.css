@@ -14,7 +14,7 @@ h2 {
     left: 300px;
     width: 900px;
     height: 100%;
-    text-align: left;
+    text-align: center;
     background-color: greenyellow;
 }
 
@@ -26,3 +26,13 @@ h2 {
     text-align: center;
     background-color: lightpink;
 }
+.bottomLeft {
+    position: absolute;
+    top:650px;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    text-align: left;
+    background-color: lightpink;
+}
+

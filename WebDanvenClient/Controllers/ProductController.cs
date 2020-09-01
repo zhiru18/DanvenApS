@@ -18,6 +18,7 @@ namespace WebDanvenClient.Controllers
                 switch (id) {
                     case 1:
                         product.Id = 1;
+                        product.Name = "Standard series";
                         product.products.Add("T05-STD");
                         product.products.Add("T15-STD");
                         product.products.Add("T25-STD");
@@ -30,8 +31,10 @@ namespace WebDanvenClient.Controllers
                         Console.WriteLine("Wednesday");
                         break;
                 }
+            } else {
+                ViewBag.Situation = 0;
             }
-            return View(product);
+                return View(product);
         }
 
         public ActionResult StandardSeries(int? id) {
