@@ -7,31 +7,50 @@
     @ViewBag.Title
 </h2>
 <body>
-
+    <div class="left">
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+            Standard series
+        </button>
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+            Low chlorine series
+        </button>
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+            Gardening series
+        </button>
+    </div>
     <div class="topLeft">
 
-        <img src="~/Photoes/prod1.png" width="500" height="375" style="text-align: center">
+        <img src="~/Photoes/prod1.png" width="450" height="350" style="text-align: center">
         <a href='@Url.Action("Index", "Product", new {Id = 1 })' target="_blank">
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:500px">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:475px">
                 Standard series
             </h3>
         </a>
 
     </div>
     <div class="topRight">
-        <img src="~/Photoes/prod2.png" width="500" height="375" style="text-align: center">
+        <img src="~/Photoes/prod2.png" width="450" height="350" style="text-align: center">
         <br />
         <a href='@Url.Action("Index", "Product", new {Id = 2})' target="_blank">
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:475px">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:450px">
                 Low chlorine series
             </h3>
         </a>
     </div>
     <div class="bottomLeft">
-        <img src="~/Photoes/prod3.png" width="500" height="375" style="text-align: center">
+        <img src="~/Photoes/prod3.png" width="450" height="350" style="text-align: center">
         <br />
         <a href='@Url.Action("Index", "Product", new {Id = 3 })' target="_blank">
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:475px">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:450px">
                 Gardening series
             </h3>
         </a>

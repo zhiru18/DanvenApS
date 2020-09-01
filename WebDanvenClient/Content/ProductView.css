@@ -15,7 +15,7 @@ h2 {
     width: 900px;
     height: 100%;
     text-align: center;
-    background-color: greenyellow;
+    background-color:lightblue;
 }
 
 .left {
@@ -24,15 +24,15 @@ h2 {
     height: 100%;
     width: 300px;
     text-align: center;
-    background-color: lightpink;
+    background-color: lightblue;
 }
 .bottomLeft {
     position: absolute;
     top:650px;
     left: 0px;
     height: 100%;
-    width: 300px;
+    width: 500px;
     text-align: left;
-    background-color: lightpink;
+    background-color: lightblue;
 }
 

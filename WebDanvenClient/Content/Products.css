@@ -12,10 +12,10 @@ h2 {
 .bottomLeft {
     position: absolute;
     bottom: 0px;
-    top: 850px;
+    top: 800px;
     text-align: left;
-    left: 200px;
-    width: 550px;
+    left: 300px;
+    width: 450px;
     background-color: lightblue;
     height: 100%;
 }
@@ -23,9 +23,9 @@ h2 {
 .bottomRight {
     position: absolute;
     bottom: 0px;
-    top: 850px;
-    right: 0px;
-    width: 550px;
+    top: 800px;
+    right: 50px;
+    width: 450px;
     height: 100%;
     text-align: left;
     background-color: lightblue;
@@ -33,11 +33,11 @@ h2 {
 
 .topLeft {
     position: absolute;
-    left: 200px;
+    left: 300px;
     top: 200px;
     bottom: 850px;
     height: 100%;
-    width: 550px;
+    width: 450px;
     text-align: left;
     background-color: lightblue;
 }
@@ -46,9 +46,17 @@ h2 {
     position: absolute;
     top: 200px;
     bottom: 850px;
-    width: 550px;
-    right: 0px;
+    width: 450px;
+    right: 50px;
     text-align: left;
     height: 100%;
+    background-color: lightblue;
+}
+.left {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    text-align: center;
     background-color: lightblue;
 }
