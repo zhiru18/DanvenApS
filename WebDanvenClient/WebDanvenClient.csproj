@@ -186,6 +186,8 @@
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\StandardSeries.cshtml" />
+    <Content Include="Views\Product\LowChlorineSeries.cshtml" />
+    <Content Include="Views\Product\GardeningSeries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

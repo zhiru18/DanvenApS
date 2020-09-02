@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "GardeningSeries";
+}
+@Styles.Render("~/Content/ProductView.css")
+<h2>GardeningSeries</h2>
+<body>
+    <div class="left">
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+            Standard series
+        </button>
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+            Low chlorine series
+        </button>
+        <br />
+        <br />
+        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                style=" background-color:lawngreen;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+            Gardening series
+        </button>
+    </div>
+    </body>
+

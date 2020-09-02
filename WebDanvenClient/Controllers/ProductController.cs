@@ -25,10 +25,17 @@ namespace WebDanvenClient.Controllers
 
                         break;
                     case 2:
-                        Console.WriteLine("Tuesday");
+                        product.Id = 2;
+                        product.Name = "Low chlorine series";
+                        product.products.Add("T05-LC");
+                        product.products.Add("T15-LC");
+                        product.products.Add("T25-LC");
                         break;
                     case 3:
-                        Console.WriteLine("Wednesday");
+                        product.Id = 3;
+                        product.Name = "Gardening series";
+                        product.products.Add("T15-HC");
+                        product.products.Add("T25-HC");
                         break;
                 }
             } else {
@@ -38,6 +45,22 @@ namespace WebDanvenClient.Controllers
         }
 
         public ActionResult StandardSeries(int? id) {
+            ViewBag.Message = "Your application description page.";
+            if (id != null & id > 0) {
+                ViewBag.Situation = id;
+            }
+            return View();
+        }
+
+        public ActionResult LowChlorineSeries(int? id) {
+            ViewBag.Message = "Your application description page.";
+            if (id != null & id > 0) {
+                ViewBag.Situation = id;
+            }
+            return View();
+        }
+
+        public ActionResult GardeningSeries(int? id) {
             ViewBag.Message = "Your application description page.";
             if (id != null & id > 0) {
                 ViewBag.Situation = id;

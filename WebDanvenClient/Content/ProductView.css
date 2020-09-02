@@ -35,4 +35,12 @@ h2 {
     text-align: left;
     background-color: lightblue;
 }
-
+.bottomLeft2 {
+    position: absolute;
+    top: 750px;
+    left: 0px;
+    height: 100%;
+    width: 500px;
+    text-align: left;
+    background-color: lightblue;
+}
