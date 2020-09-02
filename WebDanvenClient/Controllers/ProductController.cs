@@ -33,7 +33,7 @@ namespace WebDanvenClient.Controllers
                         break;
                     case 3:
                         product.Id = 3;
-                        product.Name = "Gardening series";
+                        product.Name = "Horticultural series";
                         product.products.Add("T15-HC");
                         product.products.Add("T25-HC");
                         break;
@@ -60,7 +60,7 @@ namespace WebDanvenClient.Controllers
             return View();
         }
 
-        public ActionResult GardeningSeries(int? id) {
+        public ActionResult HorticulturalSeries(int? id) {
             ViewBag.Message = "Your application description page.";
             if (id != null & id > 0) {
                 ViewBag.Situation = id;

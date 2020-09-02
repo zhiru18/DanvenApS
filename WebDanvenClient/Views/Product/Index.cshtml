@@ -29,7 +29,7 @@
             <br />
             <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
                     style=" background-color:lawngreen;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Gardening series
+                Horticultural series
             </button>
         </div>
     </body>
@@ -63,7 +63,7 @@
             <br />
             <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
                     style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Gardening series
+                Horticultural series
             </button>
         </div>
         <div class="right">
@@ -133,7 +133,7 @@
             <br />
             <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
                     style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Gardening series
+                Horticultural series
             </button>
         </div>
         <div class="right">
@@ -199,7 +199,7 @@
                     <ul class="dropdown-menu">
                         @for (int i = 0; i < Model.products.Count; i++) {
                             int b = i + 1;
-                            <li onclick="location.href='@Url.Action("GardeningSeries", "Product", new {Id = @b })'">
+                            <li onclick="location.href='@Url.Action("Horticultural", "Product", new {Id = @b })'">
                                 @Model.products[i]
                             </li>
                         }
@@ -222,9 +222,9 @@
             <br />
             <br />
             <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-                DCW disinfection generator- Gardening series
+                DCW disinfection generator- Horticultural series
                 <br />
-                The gardening series unit uses potassium chloride as the raw material,
+                The horticultural series unit uses potassium chloride as the raw material,
                 <br />which not only produces hypochlorous acid solution with strong sterilization
                 <br />ability, but also provides the necessary potassium for plant growth,
                 <br />which can increase the area of plant roots and leaves, increase yield,
@@ -234,7 +234,7 @@
             <div class="bottomLeft">
                 @for (int i = 0; i < Model.products.Count; i++) {
                     int b = i + 1;
-                    <a href='@Url.Action("GardeningSeries", "Product", new { Id = @b })' target="_blank">
+                    <a href='@Url.Action("HorticulturalSeries", "Product", new { Id = @b })' target="_blank">
                         <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
 
                             @Model.products[i] TECHNICAL DATA
