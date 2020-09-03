@@ -153,7 +153,17 @@
     <Content Include="Photoes\prod1-3.png" />
     <Content Include="Photoes\prod1-3T.png" />
     <Content Include="Photoes\prod1.png" />
+    <Content Include="Photoes\prod2-1.png" />
+    <Content Include="Photoes\prod2-1T.png" />
+    <Content Include="Photoes\prod2-2.png" />
+    <Content Include="Photoes\prod2-2T.png" />
+    <Content Include="Photoes\prod2-3.png" />
+    <Content Include="Photoes\prod2-3T.png" />
     <Content Include="Photoes\prod2.png" />
+    <Content Include="Photoes\prod3-1.png" />
+    <Content Include="Photoes\prod3-1T.png" />
+    <Content Include="Photoes\prod3-2.png" />
+    <Content Include="Photoes\prod3-2T.png" />
     <Content Include="Photoes\prod3.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

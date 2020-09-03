@@ -199,7 +199,7 @@
                     <ul class="dropdown-menu">
                         @for (int i = 0; i < Model.products.Count; i++) {
                             int b = i + 1;
-                            <li onclick="location.href='@Url.Action("Horticultural", "Product", new {Id = @b })'">
+                            <li onclick="location.href='@Url.Action("HorticulturalSeries", "Product", new {Id = @b })'">
                                 @Model.products[i]
                             </li>
                         }
@@ -217,7 +217,7 @@
             <br />
             <br />
             <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                Gardening series
+                Horticultural series
             </h3>
             <br />
             <br />
