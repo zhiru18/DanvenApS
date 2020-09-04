@@ -4,4 +4,79 @@
 }
 
 <h2>Eftersalgsservice</h2>
+@Styles.Render("~/Content/Eftersalgsservice.css")
+<body>
+    <div class="left">
+        <h3 style="color:white">Eftersalgsservice</h3>
+        <div class="topLeft">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 1})'">
+                Result promise
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 2})'">
+                Service guarantee
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                Repair application
+            </button>
+        </div>
+    </div>
+    @if (ViewBag.Situation < 1) {
 
+    } else if (ViewBag.Situation == 1) {
+        <div class="right">
+            <h3 style="color:white">
+                Result promise
+            </h3>
+            <br />
+            <h3>
+                <br />1. Strong and broad-spectrum sterilization, quickly kill various bacteria, fungi,
+                <br />viruses, spores and other microorganisms;
+                <br />
+                <br />2. Completely remove biofilm and inhibit its regeneration;
+                <br />
+                <br />3. The use of low-concentration DCW hypochlorous acid solution can reach the industry
+                <br />standard (the sterilization effect of 30ppm DCW hypochlorous acid solution is better
+                <br />than 100ppm sodium hypochlorite solution);
+                <br />
+                <br />4. The cost of DCW hypochlorous acid solution is less than 0.03 yuan/liter 
+                <br />(including water, electricity, and raw salt costs);
+                <br />
+                <br />5. The solution will not cause harm to the human body and the environment.
+                <br />After sterilization, it will naturally degrade into salt and water, even
+                <br />if it leaks, it will be reduced to salt and water;
+                <br />
+                <br />6. The solution has low corrosiveness, and the corrosiveness of 1ppm DCW
+                <br />hypochlorous acid solution to metals is equivalent to that of tap water;
+            </h3>
+        </div>
+    } else if (ViewBag.Situation == 2) {
+        <div class="right">
+           <h3 style="color:white">
+                 Service guarantee
+           </h3>
+           <br />
+           <h3>
+               <br />1. The installation only takes 1 day;
+               <br />
+               <br />2. The whole machine is imported from Denmark and the warranty period is 2 years,
+               <br />and the electrolytic cell warranty period is 3 years;
+               <br />
+               <br />3. Two free on-site maintenance during the warranty period;
+               <br />
+               <br /> 4. When the equipment fails, we will give a clear reply within 2 hours, 
+               <br />and provide customers with solutions within 4 hours. For faults that affect the
+               <br />normal operation of the equipment, after-sales service personnel arrive at the scene 
+               <br />within 24 hours and solve the problem in a short time.
+          </h3>       |
+        </div>   
+     }
+</body>

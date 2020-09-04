@@ -30,10 +30,14 @@ namespace WebDanvenClient.Controllers {
             return View();
         }
 
-        public ActionResult Eftersalgsservice() {
+        public ActionResult Eftersalgsservice(int? id) {
             ViewBag.Message = "Your application description page.";
+            if (id != null & id > 0) {
+                ViewBag.Situation = id;
+            } else {
+                ViewBag.Situation = 0;
+            }
             return View();
-
         }
         public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
