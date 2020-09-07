@@ -29,5 +29,53 @@
             </button>
         </div>
     </div>
-    </body>
+    <div class="right">
+        
+        <br>
+        <form id='joinName' action='@Url.Action("JoinTable","Table")' method="post">
+            <h3>
+                <label> 1. Generator identification</label>
+            </h3>
+            <label><span style="color:red;">* </span>  Type number: </label>
+            <input type="text" name="typeNumber" id="typeNumber">
+            <br />
+            <br />
+            <label><span style="color:red;">* </span>  serial number: </label>
+            <input type="text" name="serialNumber" id="serialNumber">
+            <br />
+            <br />
+            <label><span style="color:red;">* </span>  Running hours: </label>
+            <input type="text" name="runningHours" id="runningHours">
+            <br />
+            <br />
+            <label>Installation date:</label>
+            <input type="text" name="installationDate" id="installationDate">
+            <br />
+            <br />
+            <label> Application:</label>
+            <input type="text" name="application:" id="application:">
+            <br />
+            <br />
+            <h3>
+                <label> 2. Product identification</label>
+            </h3>
+            <label><span style="color:red;">* </span>  Product type: </label>
+            <input type="text" name="productType" id="productType">
+            <br />
+            <br />
+            <label><span style="color:red;">* </span>  Serial number: </label>
+            <input type="text" name="serialNumber" id="serialNumber">
+            <br />
+            <br />
+            <label><span style="color:red;">* </span>  Invoice number: </label>
+            <input type="text" name="invoiceNumber" id="invoiceNumber">
+            <br />
+            <br />
+            <input type="submit" value="Join Game Table" class="button" />
+            <br>
+            <br>
+
+        </form>
+    </div>
+</body>
 
