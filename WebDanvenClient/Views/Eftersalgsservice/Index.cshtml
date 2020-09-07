@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Styles.Render("~/Content/Eftersalgsservice.css")
+<body>
+    <div class="left">
+        <h3 style="color:white">Eftersalgsservice</h3>
+        <div class="topLeft">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 1})'">
+                Result promise
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 2})'">
+                Service guarantee
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                Repair application
+            </button>
+        </div>
+    </div>
+    </body>
+
