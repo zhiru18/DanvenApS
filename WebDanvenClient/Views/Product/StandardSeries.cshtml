@@ -8,72 +8,74 @@
 
 <body>
     <div class="left">
-        <br />
-        <br />
-        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
-            Standard series
-        </button>
-        <br />
-        <br />
-        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
-            Low chlorine series
-        </button>
-        <br />
-        <br />
-        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                style=" background-color:lawngreen;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-            Horticultural series
-        </button>
-    </div>
-    <div class="right">
-        @if (ViewBag.Situation == 1) {
+        <div class="topLeft">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+                Standard series
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+                Low chlorine series
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                Horticultural series
+            </button>
+        </div>
+        </div>
+        <div class="right">
+            @if (ViewBag.Situation == 1) {
 
-            <h3>
-                T05-STD TECHNICAL DATA
-            </h3>
-            <img src="~/Photoes/prod1-1.png" width="350" height="550" style=" text-align: center;
+                <h3>
+                    T05-STD TECHNICAL DATA
+                </h3>
+                <img src="~/Photoes/prod1-1.png" width="350" height="550" style=" text-align: center;
         position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                T05-STD
-            </h3>
-            <img src="~/Photoes/prod1-1T.png" width="620" height="800" style=" text-align: center;
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    T05-STD
+                </h3>
+                <img src="~/Photoes/prod1-1T.png" width="620" height="800" style=" text-align: center;
         position: relative; top:100px">
 
 
-        } else if (ViewBag.Situation == 2) {
-            <h3>
-                T15-STD TECHNICAL DATA
-            </h3>
-            <img src="~/Photoes/prod1-2.png" width="350" height="550" style=" text-align: center;
+            } else if (ViewBag.Situation == 2) {
+                <h3>
+                    T15-STD TECHNICAL DATA
+                </h3>
+                <img src="~/Photoes/prod1-2.png" width="350" height="550" style=" text-align: center;
         position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                T15-STD
-            </h3>
-            <img src="~/Photoes/prod1-2T.png" width="620" height="700" style=" text-align: center;
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    T15-STD
+                </h3>
+                <img src="~/Photoes/prod1-2T.png" width="620" height="700" style=" text-align: center;
         position: relative; top:100px">
 
-        } else if (ViewBag.Situation == 3) {
-            <h3>
-                T25-STD TECHNICAL DATA
-            </h3>
-            <img src="~/Photoes/prod1-3.png" width="370" height="550" style=" text-align: center;
+            } else if (ViewBag.Situation == 3) {
+                <h3>
+                    T25-STD TECHNICAL DATA
+                </h3>
+                <img src="~/Photoes/prod1-3.png" width="370" height="550" style=" text-align: center;
         position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                T25-STD
-            </h3>
-            <img src="~/Photoes/prod1-3T.png" width="620" height="700" style=" text-align: center;
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    T25-STD
+                </h3>
+                <img src="~/Photoes/prod1-3T.png" width="620" height="700" style=" text-align: center;
         position: relative; top:100px">
-        }
-    </div>
-    </body>
+            }
+        </div>
+</body>

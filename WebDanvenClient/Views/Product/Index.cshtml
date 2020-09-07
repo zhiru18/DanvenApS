@@ -13,238 +13,244 @@
 @if (ViewBag.Situation < 1) {
     <body>
         <div class="left">
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                    style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
-                Standard series
-            </button>
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                    style=" background-color:lawngreen; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
-                Low chlorine series
-            </button>
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
-                    style=" background-color:lawngreen;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Horticultural series
-            </button>
-        </div>
-    </body>
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+                    Standard series
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+                    Low chlorine series
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                    Horticultural series
+                </button>
+            </div>
+         </div>
+</body>
 
 } else if (ViewBag.Situation == 1) {
 
     <body>
         <div class="left">
-            <br />
-            <br />
-            <div class="dropdown">
-                <div class="dropdown" style="display:inline-block">
-                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                            style="background-color: lawngreen; width:155px; height:35px">
-                        @Model.Name
-                    </button>
-                    <ul class="dropdown-menu">
-                        @for (int i = 0; i < Model.products.Count; i++) {
-                            int b = i + 1;
-                            <li onclick="location.href='@Url.Action("StandardSeries", "Product", new {Id = @b })'">@Model.products[i]</li>
-                        }
-                    </ul>
+            <div class="topLeft">
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("StandardSeries", "Product", new {Id = @b })'">@Model.products[i]</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+                    Low chlorine series
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                    Horticultural series
+                </button>
+            </div>
+        </div>
+            <div class="right">
+                <img src="~/Photoes/prod1.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    Standard series
+                </h3>
+                <br />
+                <br />
+                <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                    DCW disinfection generator-Standard series
+                    <br />
+                    The standard series unit is electrolyzed by mixing 0.5% saturated brine and
+                    <br />
+                    99.5% demineralized water. According to the different production capacity of
+                    <br />
+                    each type of unit, it is widely used in sterilization and disinfection in
+                    <br />
+                    various fields such as medical industry and food processing.
+                </h4>
+                <div class="bottomLeft">
+                    @for (int i = 0; i < Model.products.Count; i++) {
+                        int b = i + 1;
+                        <a href='@Url.Action("StandardSeries", "Product", new { Id = 1 })' target="_blank">
+                            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                                @Model.products[i] TECHNICAL DATA
+                            </h3>
+                        </a>
+                        <br />
+                    }
                 </div>
             </div>
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
-                Low chlorine series
-            </button>
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Horticultural series
-            </button>
-        </div>
-        <div class="right">
-            <img src="~/Photoes/prod1.png" width="400" height="300" style=" text-align: center;
-        position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                Standard series
-            </h3>
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-                DCW disinfection generator-Standard series
-                <br />
-                The standard series unit is electrolyzed by mixing 0.5% saturated brine and
-                <br />
-                99.5% demineralized water. According to the different production capacity of
-                <br />
-                each type of unit, it is widely used in sterilization and disinfection in
-                <br />
-                various fields such as medical industry and food processing.
-            </h3>
-            <div class="bottomLeft">
-                @for (int i = 0; i < Model.products.Count; i++) {
-                    int b = i + 1;
-                    <a href='@Url.Action("StandardSeries", "Product", new { Id = 1 })' target="_blank">
-                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-
-                            @Model.products[i] TECHNICAL DATA
-                        </h3>
-                    </a>
-                    <br />
-                }
-            </div>
-        </div>
-    </body>
+</body>
 } else if (ViewBag.Situation == 2) {
     <body>
         <div class="left">
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
-                Standard series
-            </button>
-            <br />
-            <br />
-            <div class="dropdown">
-                <div class="dropdown" style="display:inline-block">
-                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                            style="background-color: lawngreen; width:155px; height:35px">
-                        @Model.Name
-                    </button>
-                    <ul class="dropdown-menu">
-                        @for (int i = 0; i < Model.products.Count; i++) {
-                            int b = i + 1;
-                            <li onclick="location.href='@Url.Action("LowChlorineSeries", "Product", new {Id = @b })'">
-                                @Model.products[i]
-                            </li>
-                        }
-                    </ul>
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+                    Standard series
+                </button>
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("LowChlorineSeries", "Product", new {Id = @b })'">
+                                    @Model.products[i]
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
+                    Horticultural series
+                </button>
+            </div>
+          </div>
+            <div class="right">
+                <img src="~/Photoes/prod3.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    Low chlorine series
+                </h3>
+                <br />
+                <br />
+                <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                    DCW disinfection generator-Low chlorine series
+                    <br />
+                    The low-chlorine series unit is electrolyzed by mixing 0.3% saturated brine
+                    <br />and 99.7% softened water. It mainly serves the circulating water system.
+                    <br />It effectively kills various pathogenic microorganisms and removes biofilm
+                    <br />and algae while avoiding corrosion of pipelines. And inhibit its regeneration.
+                    <br />It is suitable for sterilization and disinfection in various fields such as
+                    <br />cooling towers, hotels and public buildings hot water systems, swimming
+                    <br />pools, landscape ponds, CIP pipelines and pasteurizers.
+                </h4>
+                <div class="bottomLeft2">
+                    @for (int i = 0; i < Model.products.Count; i++) {
+                        int b = i + 1;
+                        <a href='@Url.Action("LowChlorineSeries", "Product", new { Id = @b })' target="_blank">
+                            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                                @Model.products[i] TECHNICAL DATA
+                            </h3>
+                        </a>
+                        <br />
+                    }
                 </div>
             </div>
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 3})'">
-                Horticultural series
-            </button>
-        </div>
-        <div class="right">
-            <img src="~/Photoes/prod3.png" width="400" height="300" style=" text-align: center;
-        position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                Low chlorine series
-            </h3>
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-                DCW disinfection generator-Low chlorine series
-                <br />
-                The low-chlorine series unit is electrolyzed by mixing 0.3% saturated brine
-                <br />and 99.7% softened water. It mainly serves the circulating water system.
-                <br />It effectively kills various pathogenic microorganisms and removes biofilm
-                <br />and algae while avoiding corrosion of pipelines. And inhibit its regeneration.
-                <br />It is suitable for sterilization and disinfection in various fields such as
-                <br />cooling towers, hotels and public buildings hot water systems, swimming
-                <br />pools, landscape ponds, CIP pipelines and pasteurizers.
-            </h3>
-            <div class="bottomLeft2">
-                @for (int i = 0; i < Model.products.Count; i++) {
-                    int b = i + 1;
-                    <a href='@Url.Action("LowChlorineSeries", "Product", new { Id = @b })' target="_blank">
-                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-
-                            @Model.products[i] TECHNICAL DATA
-                        </h3>
-                    </a>
-                    <br />
-                }
-            </div>
-        </div>
-    </body>
+</body>
 
 } else if (ViewBag.Situation == 3) {
     <body>
         <div class="left">
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
-                Standard series
-            </button>
-            <br />
-            <br />
-            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                    style=" background-color:lightgrey;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
-                Low chlorine series
-            </button>
-            <br />
-            <br />
-            <div class="dropdown">
-                <div class="dropdown" style="display:inline-block">
-                    <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
-                            style="background-color: lawngreen; width:155px; height:35px">
-                        @Model.Name
-                    </button>
-                    <ul class="dropdown-menu">
-                        @for (int i = 0; i < Model.products.Count; i++) {
-                            int b = i + 1;
-                            <li onclick="location.href='@Url.Action("HorticulturalSeries", "Product", new {Id = @b })'">
-                                @Model.products[i]
-                            </li>
-                        }
-                    </ul>
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 1})'">
+                    Standard series
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Product", new {Id = 2})'">
+                    Low chlorine series
+                </button>
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("HorticulturalSeries", "Product", new {Id = @b })'">
+                                    @Model.products[i]
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+            <div class="right">
+                <img src="~/Photoes/prod2.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+                <br />
+                <br />
+                <br />
+                <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                    Horticultural series
+                </h3>
+                <br />
+                <br />
+                <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                    DCW disinfection generator- Horticultural series
+                    <br />
+                    The horticultural series unit uses potassium chloride as the raw material,
+                    <br />which not only produces hypochlorous acid solution with strong sterilization
+                    <br />ability, but also provides the necessary potassium for plant growth,
+                    <br />which can increase the area of plant roots and leaves, increase yield,
+                    <br />and shorten the production cycle. Effect. It is suitable for horticultural irrigation
+                    <br />system sterilization and space spray disinfection.
+                </h4>
+                <div class="bottomLeft">
+                    @for (int i = 0; i < Model.products.Count; i++) {
+                        int b = i + 1;
+                        <a href='@Url.Action("HorticulturalSeries", "Product", new { Id = @b })' target="_blank">
+                            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                                @Model.products[i] TECHNICAL DATA
+                            </h3>
+                        </a>
+                        <br />
+                    }
                 </div>
             </div>
-            <br />
-            <br />
-
-        </div>
-        <div class="right">
-            <img src="~/Photoes/prod2.png" width="400" height="300" style=" text-align: center;
-        position: relative; top:50px">
-            <br />
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
-                Horticultural series
-            </h3>
-            <br />
-            <br />
-            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-                DCW disinfection generator- Horticultural series
-                <br />
-                The horticultural series unit uses potassium chloride as the raw material,
-                <br />which not only produces hypochlorous acid solution with strong sterilization
-                <br />ability, but also provides the necessary potassium for plant growth,
-                <br />which can increase the area of plant roots and leaves, increase yield,
-                <br />and shorten the production cycle. Effect. It is suitable for horticultural irrigation
-                <br />system sterilization and space spray disinfection.
-            </h3>
-            <div class="bottomLeft">
-                @for (int i = 0; i < Model.products.Count; i++) {
-                    int b = i + 1;
-                    <a href='@Url.Action("HorticulturalSeries", "Product", new { Id = @b })' target="_blank">
-                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
-
-                            @Model.products[i] TECHNICAL DATA
-                        </h3>
-                    </a>
-                    <br />
-                }
-            </div>
-        </div>
-    </body>
+</body>
 
 
 }

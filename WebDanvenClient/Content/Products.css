@@ -60,3 +60,12 @@ h2 {
     text-align: center;
     background-color: lightblue;
 }
+.topLeft2 {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    height: 230px;
+    width: 220px;
+    text-align: center;
+    background-color: white;
+}
