@@ -33,37 +33,37 @@
         
         <br>
        
-            <form action="/Eftersalgsservice/Index" method="post">
+            <form action="/Eftersalgsservice/Index" name="repairForm" id="repairForm" method="post">
                 <table width="80%" border="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#CCFFCC" cellpadding="4" align="left">
                     <tr>
                         <td colspan="2"> <div align="left"><label>1. Generator identification</label></div> </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>  Type number: </td>
-                        <td><input type="text" name="typeNumber" id="typeNumber" /> </td>
+                        <td><input type="text" name="typeNumber" id="typeNumber" value="@Request["typeNumber"]" /> </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>  Serial number: </td>
                         <td>
-                            <input type="text" name="serialNumber" id="serialNumber" />
+                            <input type="text" name="serialNumber1" id="serialNumber1" value="@Request["serialNumber1"]" />
                         </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>  Running hours:</td>
                         <td>
-                            <input type="text" name="runningHours" id="runningHours" />
+                            <input type="text" name="runningHours" id="runningHours" value="@Request["runningHours"]" />
                         </td>
                     </tr>
                     <tr>
                         <td> Installation date: </td>
                         <td>
-                            <input type="text" name="installationDate" id="installationDate" />
+                            <input type="text" name="installationDate" id="installationDate" value="@Request["installationDate"]" />
                         </td>
                     </tr>
                     <tr>
                         <td> Application:</td>
                         <td>
-                            <input type="text" name="application:" id="application:" />
+                            <input type="text" name="application" id="application" value="@Request["application"]"/>
                         </td>
                     </tr>
 
@@ -72,15 +72,15 @@
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>   Product type: </td>
-                        <td>   <input type="text" name="productType" id="productType" /> </td>
+                        <td>   <input type="text" name="productType" id="productType" value="@Request["productType"]" /> </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>  Serial number: </td>
-                        <td>  <input type="text" name="serialNumber" id="serialNumber" /> </td>
+                        <td>  <input type="text" name="serialNumber2" id="serialNumbe2" value="@Request["serialNumber2"]"  /> </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>   Invoice number: </td>
-                        <td>  <input type="text" name="invoiceNumber" id="invoiceNumber" /></td>
+                        <td>  <input type="text" name="invoiceNumber" id="invoiceNumber" value="@Request["invoiceNumber"]"/></td>
                     </tr>
 
                     <tr>
@@ -88,8 +88,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <textarea type="text" name="descriptionReason " id="descriptionReason" style="width:2000px; height:100px">
-             </textarea>
+                            <input type="text" name="descriptionReason" id="descriptionReason" value="@Request["descriptionReason"]" style="width:2000px; height:100px"/>
                         </td>
                     </tr>
                     <tr>
@@ -97,8 +96,8 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <textarea type="text" name="additionalInformation " id="additionalInformation" style="width:2000px; height:100px">
-                    </textarea>
+                            <input type="text" name="additionalInformation" id="additionalInformation" value="@Request["additionalInformation"]" style="width:2000px; height:100px" />
+      
                         </td>
                     </tr>
                     <tr>
@@ -106,29 +105,29 @@
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span>  Company name: </td>
-                        <td>   <input type="text" name="companyName" id="companyName" /> </td>
+                        <td>   <input type="text" name="companyName" id="companyName" value="@Request["companyName"]" /> </td>
                     </tr>
                     <tr>
                         <td> Address: </td>
                         <td>
-                            <input type="text" name="address" id="address" />
+                            <input type="text" name="address" id="address" value="@Request["address"]" />
                         </td>
                     </tr>
                     <tr>
                         <td> Company contact: </td>
                         <td>
-                            <input type="text" name="companyContact" id="companyContac" />
+                            <input type="text" name="companyContact" id="companyContact" value="@Request["companyContact"]" />
                         </td>
                     </tr>
                     <tr>
                         <td> Email: </td>
                         <td>
-                            <input type="text" name="email" id="email" />
+                            <input type="text" name="email" id="email" value="@Request["email"]"/>
                         </td>
                     </tr>
                     <tr>
                         <td> <span style="color:red;">* </span> Tel. (direct): </td>
-                        <td>   <input type="text" name="telephoneNo" id="telephoneNo" /></td>
+                        <td>   <input type="text" name="telephoneNo" id="telephoneNo" value="@Request["telephoneNo"]" /></td>
                     </tr>
                     <tr>
                         <td>  </td>
