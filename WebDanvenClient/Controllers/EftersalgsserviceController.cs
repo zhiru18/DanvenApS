@@ -13,5 +13,17 @@ namespace WebDanvenClient.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(string typeNumber) {
+            if (typeNumber != null && typeNumber != "") {
+                ViewBag.Message = "successful";
+                return View();
+            }
+            else {
+               ViewBag.Message ="you should fill all the * options";
+                return View();
+            }
+        }
     }
 }

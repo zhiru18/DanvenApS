@@ -32,114 +32,122 @@
     <div class="right">
         
         <br>
-        <form id='joinName' action='@Url.Action("JoinTable","Table")' method="post">
-            <table width="80%" border="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#CCFFCC" cellpadding="4" align="left">
-                <tr>
-                    <td colspan="2"> <div align="left"><label>1. Generator identification</label></div> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>  Type number: </td>
-                    <td><input type="text" name="typeNumber" id="typeNumber" /> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>  Serial number: </td>
-                    <td>
-                        <input type="text" name="serialNumber" id="serialNumber" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>  Running hours:</td>
-                    <td>
-                        <input type="text" name="runningHours" id="runningHours" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Installation date: </td>
-                    <td>
-                        <input type="text" name="installationDate" id="installationDate" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Application:</td>
-                    <td>
-                        <input type="text" name="application:" id="application:" />
-                    </td>
-                </tr>
+       
+            <form action="/Eftersalgsservice/Index" method="post">
+                <table width="80%" border="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#CCFFCC" cellpadding="4" align="left">
+                    <tr>
+                        <td colspan="2"> <div align="left"><label>1. Generator identification</label></div> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>  Type number: </td>
+                        <td><input type="text" name="typeNumber" id="typeNumber" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>  Serial number: </td>
+                        <td>
+                            <input type="text" name="serialNumber" id="serialNumber" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>  Running hours:</td>
+                        <td>
+                            <input type="text" name="runningHours" id="runningHours" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Installation date: </td>
+                        <td>
+                            <input type="text" name="installationDate" id="installationDate" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Application:</td>
+                        <td>
+                            <input type="text" name="application:" id="application:" />
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td colspan="2"> <div align="left"><label>2. Product identification</label></div> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>   Product type: </td>
-                    <td>   <input type="text" name="productType" id="productType" /> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>  Serial number: </td>
-                    <td>  <input type="text" name="serialNumber" id="serialNumber" /> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>   Invoice number: </td>
-                    <td>  <input type="text" name="invoiceNumber" id="invoiceNumber" /></td>
-                </tr>
+                    <tr>
+                        <td colspan="2"> <div align="left"><label>2. Product identification</label></div> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>   Product type: </td>
+                        <td>   <input type="text" name="productType" id="productType" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>  Serial number: </td>
+                        <td>  <input type="text" name="serialNumber" id="serialNumber" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>   Invoice number: </td>
+                        <td>  <input type="text" name="invoiceNumber" id="invoiceNumber" /></td>
+                    </tr>
 
-                <tr>
-                    <td colspan="2"> <div align="left"><label><span style="color:red;">* </span>3. Error description / reason for return</label></div> </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <textarea type="text" name="descriptionReason " id="descriptionReason" style="width:2000px; height:100px">
+                    <tr>
+                        <td colspan="2"> <div align="left"><label><span style="color:red;">* </span>3. Error description / reason for return</label></div> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea type="text" name="descriptionReason " id="descriptionReason" style="width:2000px; height:100px">
              </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"> <div align="left"><label> 4. Additional information</label></div> </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <textarea type="text" name="additionalInformation " id="additionalInformation" style="width:2000px; height:100px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <div align="left"><label> 4. Additional information</label></div> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea type="text" name="additionalInformation " id="additionalInformation" style="width:2000px; height:100px">
                     </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"> <div align="left"><label>  5. Customer data</label></div> </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span>  Company name: </td>
-                    <td>   <input type="text" name="companyName" id="companyName" /> </td>
-                </tr>
-                <tr>
-                    <td> Address: </td>
-                    <td>
-                        <input type="text" name="address" id="address" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Company contact: </td>
-                    <td>
-                        <input type="text" name="companyContact" id="companyContac" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Email: </td>
-                    <td>
-                        <input type="text" name="email" id="email" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> <span style="color:red;">* </span> Tel. (direct): </td>
-                    <td>   <input type="text" name="telephoneNo" id="telephoneNo" /></td>
-                </tr>
-                <tr>
-                    <td>  </td>
-                    <td>  </td>
-                </tr>
-            </table>
-            <br />
-            <br />
-            <input type="submit" value="submit" class="button" style="position:relative; top:20PX; bottom:20px"/>
-            <br />
-            <br />
-        </form>
-    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <div align="left"><label>  5. Customer data</label></div> </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span>  Company name: </td>
+                        <td>   <input type="text" name="companyName" id="companyName" /> </td>
+                    </tr>
+                    <tr>
+                        <td> Address: </td>
+                        <td>
+                            <input type="text" name="address" id="address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Company contact: </td>
+                        <td>
+                            <input type="text" name="companyContact" id="companyContac" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Email: </td>
+                        <td>
+                            <input type="text" name="email" id="email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <span style="color:red;">* </span> Tel. (direct): </td>
+                        <td>   <input type="text" name="telephoneNo" id="telephoneNo" /></td>
+                    </tr>
+                    <tr>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <input type="submit" value="submit" class="button" style="position:relative; top:20PX; bottom:20px" />
+                <br />
+                <br />
+            </form>
+        @if (ViewBag.Message != null) {
+            <script type="text/javascript">
+                window.onload = function () {
+                    alert("@ViewBag.Message");
+                };
+            </script>
+        }
+</div>
 </body>
 
