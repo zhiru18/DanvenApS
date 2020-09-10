@@ -15,15 +15,24 @@ namespace WebDanvenClient.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string typeNumber) {
-            if (typeNumber != null && typeNumber != "") {
-                ViewBag.Message = "successful";
-                return View();
+        public ActionResult Index(FormCollection collection) {
+            var values = new List<string>();
+            for (int i = 0; i < collection.Keys.Count; i++) {
+                string value = collection[collection.Keys[i].ToString()];
+                if (value != null && value != "") {
+                    values.Add(value);
+                } else if (i==0||i==1||i==2||i==5||i==6||i==7||i==8||i==10||i==14) {                   
+                        ViewBag.Message = "you should fill all the * options";
+                         return View();
+                } else {
+                    values.Add(value);
+                }                
             }
-            else {
-               ViewBag.Message ="you should fill all the * options";
-                return View();
-            }
+            return View("SubSuccess");
+        }
+
+        public ActionResult SubSuccess() {
+            return View();
         }
     }
 }

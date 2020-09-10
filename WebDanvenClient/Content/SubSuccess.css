@@ -1,0 +1,63 @@
+﻿body {
+    max-width: 1200px;
+    max-height: 1200px;
+    background-color: lightblue;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+input {
+    tab-size: 20px;
+    width: 1000PX;
+}
+
+.right {
+    position: absolute;
+    left: 300px;
+    width: 900px;
+    height: 100%;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.left {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.bottomLeft {
+    position: absolute;
+    top: 650px;
+    left: 0px;
+    height: 100%;
+    width: 500px;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.bottomLeft2 {
+    position: absolute;
+    top: 750px;
+    left: 0px;
+    height: 100%;
+    width: 500px;
+    text-align: left;
+    background-color: lightblue;
+}
+
+.topLeft {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    height: 230px;
+    width: 220px;
+    text-align: center;
+    background-color: white;
+}

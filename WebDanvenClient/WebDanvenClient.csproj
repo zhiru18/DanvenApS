@@ -139,6 +139,7 @@
     <Content Include="Content\Homestyle.css" />
     <Content Include="Content\Products.css" />
     <Content Include="Content\ProductView.css" />
+    <Content Include="Content\SubSuccess.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -201,6 +202,7 @@
     <Content Include="Views\Product\LowChlorineSeries.cshtml" />
     <Content Include="Views\Product\HorticulturalSeries.cshtml" />
     <Content Include="Views\Eftersalgsservice\Index.cshtml" />
+    <Content Include="Views\Eftersalgsservice\SubSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
