@@ -27,7 +27,7 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
         [DataMember]
         public Customer Customer { get; set; }
         [DataMember]
-        public Product product { get; set; }
+        public Product Product { get; set; }
 
         public Generator(string typeNumber, string serialNumber, string runningHours) {
             this.TypeNumber = typeNumber;
