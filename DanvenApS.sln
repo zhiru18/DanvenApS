@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDanvenClient", "WebDanvenClient\WebDanvenClient.csproj", "{C7AFCBC9-D74D-4D22-A533-5435670837CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfDanvenRepairedProduct", "WcfDanvenRepairedProduct\WcfDanvenRepairedProduct.csproj", "{022D3662-48E7-4874-8861-7A89CDF007E3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{C7AFCBC9-D74D-4D22-A533-5435670837CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7AFCBC9-D74D-4D22-A533-5435670837CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7AFCBC9-D74D-4D22-A533-5435670837CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{022D3662-48E7-4874-8861-7A89CDF007E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{022D3662-48E7-4874-8861-7A89CDF007E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{022D3662-48E7-4874-8861-7A89CDF007E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{022D3662-48E7-4874-8861-7A89CDF007E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
