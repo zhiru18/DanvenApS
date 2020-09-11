@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace WcfDanvenRepairedProduct.ServiceAccessLayer{
+namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IRepairedProduct {
+    public interface IGeneratorService {
         [OperationContract]
         string GetData(int value);
 
@@ -19,7 +19,7 @@ namespace WcfDanvenRepairedProduct.ServiceAccessLayer{
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfDanvenRepairedProduct.ContractType".
+    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfDanvenRepairedGenerator.ContractType".
     [DataContract]
     public class CompositeType {
         bool boolValue = true;

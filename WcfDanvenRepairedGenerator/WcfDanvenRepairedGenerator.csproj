@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{022D3662-48E7-4874-8861-7A89CDF007E3}</ProjectGuid>
+    <ProjectGuid>{4088C251-8A31-48C6-AC01-658A790CBF24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WcfDanvenRepairedProduct</RootNamespace>
-    <AssemblyName>WcfDanvenRepairedProduct</AssemblyName>
+    <RootNamespace>WcfDanvenRepairedGenerator</RootNamespace>
+    <AssemblyName>WcfDanvenRepairedGenerator</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -44,9 +44,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServiceAccessLayer\IRepairedProduct.cs" />
+    <Compile Include="ModelLayer\Customer.cs" />
+    <Compile Include="ModelLayer\Generator.cs" />
+    <Compile Include="ModelLayer\Product.cs" />
+    <Compile Include="ServiceAccessLayer\IGeneratorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceAccessLayer\RepairedProduct.cs" />
+    <Compile Include="ServiceAccessLayer\GeneratorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -54,7 +57,6 @@
   <ItemGroup>
     <Folder Include="ControlLayer\" />
     <Folder Include="DatabaseAccessLayer\" />
-    <Folder Include="ModelLayer\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
