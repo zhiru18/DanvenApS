@@ -11,6 +11,8 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
+        public bool IsRepaired { get; set; }
+        [DataMember]
         public string TypeNumber { get; set; }
         [DataMember]
         public string SerialNumber { get; set; }
@@ -33,6 +35,7 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
             this.TypeNumber = typeNumber;
             this.SerialNumber = serialNumber;
             this.RunningHours = runningHours;
+            this.IsRepaired = false;
         }
     }
 }
