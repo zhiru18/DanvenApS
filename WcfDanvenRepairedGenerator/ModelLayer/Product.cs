@@ -23,5 +23,8 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
             this.InvoiceNumber = invoiceNumber;
         }
 
+        public Product() {
+
+        }
     }
 }

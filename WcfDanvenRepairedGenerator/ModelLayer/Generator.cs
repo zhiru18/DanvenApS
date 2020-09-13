@@ -37,5 +37,8 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
             this.RunningHours = runningHours;
             this.IsRepaired = false;
         }
+
+        public Generator() {
+        }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebDanvenClient.ControlLayer;
+using WebDanvenClient.Models;
 
 namespace WebDanvenClient.Controllers
 {
@@ -16,6 +18,7 @@ namespace WebDanvenClient.Controllers
 
         [HttpPost]
         public ActionResult Index(FormCollection collection) {
+            ControlGenerator controlGenerator = new ControlGenerator();
             var values = new List<string>();
             for (int i = 0; i < collection.Keys.Count; i++) {
                 string value = collection[collection.Keys[i].ToString()];
@@ -27,6 +30,35 @@ namespace WebDanvenClient.Controllers
                 } else {
                     values.Add(value);
                 }                
+            }
+            if (ViewBag.Message == null) {
+                ClientCustomer clientCustomer = new ClientCustomer() {
+                    CompanyName = values[10],
+                    CompanyAddress = values[11],
+                    ContactPersonName = values[12],
+                    Email = values[13],
+                    Telephone = values[14]
+                };
+
+                ClientProduct clientProduct = new ClientProduct() {
+                    ProductType = values[5],
+                    ProductSerialNumber = values[6],
+                    InvoiceNumber = values[7]
+                };
+
+                ClientGenerator clientGenerator = new ClientGenerator() {
+                    TypeNumber = values[0],
+                    SerialNumber = values[1],
+                    RunningHours = values[2],
+                    InstallationDate = values[3],
+                    GeneratorApplication = values[4],
+                    ErrorDescription = values[8],
+                    AdditionalInformation = values[9],
+                    Customer = clientCustomer,
+                    Product = clientProduct
+                };
+
+                controlGenerator.CreateGenerator(clientGenerator);
             }
             return View("SubSuccess");
         }

@@ -25,5 +25,9 @@ namespace WcfDanvenRepairedGenerator.ModelLayer {
             this.CompanyName = companyName;
             this.Telephone = telephone;
         }
+
+        public Customer() {
+
+        }
     }   
 }
