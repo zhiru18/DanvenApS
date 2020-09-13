@@ -10,7 +10,7 @@ namespace WebDanvenClient.Models {
         public bool IsRepaired { get; set; } 
         public string TypeNumber { get; set; }
         public string SerialNumber { get; set; }
-        public string RunningHours { get; set}
+        public string RunningHours { get; set; }
         public string InstallationDate { get; set; }       
         public string GeneratorApplication { get; set; }      
         public string ErrorDescription { get; set; }     
