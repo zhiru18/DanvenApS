@@ -60,7 +60,7 @@ namespace WebDanvenClient.Controllers
 
                 ClientGenerator insertGenerator= controlGenerator.CreateGenerator(clientGenerator);
                 if (insertGenerator == null) {
-                    ViewBag.Message = "Product type or Invoice number or Telephone No. is wwrong you should check and fill again!";
+                    ViewBag.Message = "Product type or Invoice number or Telephone No. is wrong, you should check and fill again!";
                     return View();
                 }
             }
