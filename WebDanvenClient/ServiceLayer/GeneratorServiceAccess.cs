@@ -14,7 +14,7 @@ namespace WebDanvenClient.ServiceLayer {
                 GeneratorServiceReference.Generator generator = GeneratorModelConverter.ConvertFromClientGeneratorToServiceGenerator(clientGenerator);
                 GeneratorServiceReference.Generator insertGennerator = proxy.CreateGenerator(generator); 
                 if (insertGennerator != null) {
-
+                    insertClientGenerator = GeneratorModelConverter.ConvertFromServiceGeneratorToClientGenerator(insertGennerator);
                 }
             }
             return insertClientGenerator;
