@@ -8,8 +8,8 @@ using WebDanvenClient.ServiceLayer;
 namespace WebDanvenClient.ControlLayer {
     public class ControlGenerator {
         GeneratorServiceAccess generatorServiceAccess = new GeneratorServiceAccess();
-        public void CreateGenerator(ClientGenerator clientGenerator) {
-            generatorServiceAccess.CreateGenerator(clientGenerator);
+        public ClientGenerator CreateGenerator(ClientGenerator clientGenerator) {
+            return generatorServiceAccess.CreateGenerator(clientGenerator);
            
         }
     }

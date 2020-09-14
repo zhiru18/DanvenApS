@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7208af28-752e-449f-bbaa-fd02a344d588" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8fa23ec2-9811-4b2a-a9c1-ec5d446d418e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="be5829b9-f6e1-4a4e-ae03-324886ca1a68" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ad20ed51-1620-4fdd-b208-e0583825324c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="be526c0b-ddaa-410c-b7d3-ea719cff39fe" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
-    <MetadataFile FileName="WcfDanvenRepairedGenerator.ModelLayer.xsd" MetadataType="Schema" ID="8963f7a7-90f8-4147-a1fd-b85d762edd5d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="dfdd571e-ebd1-483d-a278-c5561e9a7ada" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c150947c-6bff-4a82-8f29-4f6e784c39b1" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="83748b37-313f-4421-8a75-9b82159f85f4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
+    <MetadataFile FileName="WcfDanvenRepairedGenerator.ModelLayer.xsd" MetadataType="Schema" ID="30558225-4650-414c-bb50-05548e274908" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WcfDanvenRepairedGenerator/GeneratorService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

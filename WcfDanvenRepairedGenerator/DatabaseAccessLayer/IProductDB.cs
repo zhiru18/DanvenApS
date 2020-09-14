@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 using WcfDanvenRepairedGenerator.ModelLayer;
 
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
-    interface IGeneratorDB {
-        Generator Insert(Generator generator);
-        void UpdateGenerator(Generator generator);
-        IEnumerable<Generator> GetAll();
-
+    interface IProductDB {
+        Product GetProductByTypeInvoice(string productType, string invoice);
     }
 }

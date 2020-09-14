@@ -8,11 +8,16 @@ using WebDanvenClient.Models;
 namespace WebDanvenClient.ServiceLayer {
     public class GeneratorServiceAccess {
 
-        public void CreateGenerator(ClientGenerator clientGenerator) {
+        public ClientGenerator CreateGenerator(ClientGenerator clientGenerator) {
+            ClientGenerator insertClientGenerator = null;
             using (GeneratorServiceClient proxy = new GeneratorServiceClient()) {
                 GeneratorServiceReference.Generator generator = GeneratorModelConverter.ConvertFromClientGeneratorToServiceGenerator(clientGenerator);
-                proxy.CreateGenerator(generator);                            
+                GeneratorServiceReference.Generator insertGennerator = proxy.CreateGenerator(generator); 
+                if (insertGennerator != null) {
+
+                }
             }
+            return insertClientGenerator;
         }
     }
 }

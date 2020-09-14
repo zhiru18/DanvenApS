@@ -11,8 +11,8 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class GeneratorService : IGeneratorService {
         GeneratorController generatorController = new GeneratorController();
-        public void CreateGenerator(Generator generator) {
-            generatorController.CreateGenerator(generator);
+        public Generator CreateGenerator(Generator generator) {
+            return generatorController.CreateGenerator(generator);
         }
 
         public IEnumerable<Generator> GetAll() {

@@ -10,13 +10,15 @@
   </xs:element>
   <xs:element name="CreateGeneratorResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfDanvenRepairedGenerator.ModelLayer" minOccurs="0" name="CreateGeneratorResult" nillable="true" type="q2:Generator" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateGenerator">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfDanvenRepairedGenerator.ModelLayer" minOccurs="0" name="generator" nillable="true" type="q2:Generator" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfDanvenRepairedGenerator.ModelLayer" minOccurs="0" name="generator" nillable="true" type="q3:Generator" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -33,7 +35,7 @@
   <xs:element name="GetAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfDanvenRepairedGenerator.ModelLayer" minOccurs="0" name="GetAllResult" nillable="true" type="q3:ArrayOfGenerator" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfDanvenRepairedGenerator.ModelLayer" minOccurs="0" name="GetAllResult" nillable="true" type="q4:ArrayOfGenerator" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

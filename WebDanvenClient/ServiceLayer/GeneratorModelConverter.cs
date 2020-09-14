@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
+using WebDanvenClient.GeneratorServiceReference;
 using WebDanvenClient.Models;
 
 namespace WebDanvenClient.ServiceLayer {
@@ -43,6 +44,45 @@ namespace WebDanvenClient.ServiceLayer {
                 InvoiceNumber = clientProduct.InvoiceNumber
             };
             return product;
-      }
+        }
+
+        internal static ClientGenerator ConvertFromServiceGeneratorToClientGenerator(GeneratorServiceReference.Generator serviceGenerator) {
+            ClientCustomer clientcustomer = ConvertFromServiceCustomerToClientCustomer(serviceGenerator.Customer);
+          ClientProduct clientProduct = ConvertFromServiceProductClientToProduct(serviceGenerator.Product);
+            ClientGenerator clientGenerator = new ClientGenerator() {
+                TypeNumber = serviceGenerator.TypeNumber,
+                SerialNumber = serviceGenerator.SerialNumber,
+                RunningHours = serviceGenerator.RunningHours,
+                InstallationDate = serviceGenerator.InstallationDate,
+                GeneratorApplication = serviceGenerator.GeneratorApplication,
+                ErrorDescription = serviceGenerator.ErrorDescription,
+                AdditionalInformation = serviceGenerator.AdditionalInformation,
+                Customer = clientcustomer,
+                Product = clientProduct
+            };
+            return clientGenerator;
+        }
+
+        private static ClientProduct ConvertFromServiceProductClientToProduct(GeneratorServiceReference.Product product) {
+          ClientProduct clientProduct = new ClientProduct() {
+                Id = product.Id,
+                ProductType = product.ProductType,
+                ProductSerialNumber = product.ProductSerialNumber,
+                InvoiceNumber = product.InvoiceNumber
+            };
+            return clientProduct;
+        }
+
+        private static ClientCustomer ConvertFromServiceCustomerToClientCustomer(GeneratorServiceReference.Customer customer) {
+            ClientCustomer clientCustomer = new ClientCustomer() {
+                Id = customer.Id,
+                CompanyName = customer.CompanyName,
+                CompanyAddress = customer.CompanyAddress,
+                ContactPersonName = customer.ContactPersonName,
+                Email = customer.Email,
+                Telephone = customer.Telephone
+            };
+            return clientCustomer;
+        }
     }
 }

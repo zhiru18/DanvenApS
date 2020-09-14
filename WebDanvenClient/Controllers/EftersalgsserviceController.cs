@@ -58,7 +58,11 @@ namespace WebDanvenClient.Controllers
                     Product = clientProduct
                 };
 
-                controlGenerator.CreateGenerator(clientGenerator);
+                ClientGenerator insertGenerator= controlGenerator.CreateGenerator(clientGenerator);
+                if (insertGenerator == null) {
+                    ViewBag.Message = "Product type or Invoice number or Telephone No. is wwrong you should check and fill again!";
+                    return View();
+                }
             }
             return View("SubSuccess");
         }

@@ -14,8 +14,8 @@ namespace WcfDanvenRepairedGenerator.ControlLayer {
         public GeneratorController() {
             generatorDB = new GeneratorDB();
         }
-        public void CreateGenerator(Generator generator) {
-            generatorDB.Insert(generator);
+        public Generator CreateGenerator(Generator generator) {
+            return generatorDB.Insert(generator);
         }
     }
 }

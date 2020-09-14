@@ -11,7 +11,7 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
     [ServiceContract]
     public interface IGeneratorService {
         [OperationContract]
-        void CreateGenerator(Generator generator);
+        Generator CreateGenerator(Generator generator);
         [OperationContract]
         void UpdateGenerator(Generator generator);
         [OperationContract]

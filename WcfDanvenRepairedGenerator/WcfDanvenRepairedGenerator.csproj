@@ -46,8 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlLayer\GeneratorController.cs" />
+    <Compile Include="DatabaseAccessLayer\CustomerDB.cs" />
     <Compile Include="DatabaseAccessLayer\GeneratorDB.cs" />
+    <Compile Include="DatabaseAccessLayer\ICustomerDB.cs" />
     <Compile Include="DatabaseAccessLayer\IGeneratorDB.cs" />
+    <Compile Include="DatabaseAccessLayer\IProductDB.cs" />
+    <Compile Include="DatabaseAccessLayer\ProductDB.cs" />
     <Compile Include="ModelLayer\Customer.cs" />
     <Compile Include="ModelLayer\Generator.cs" />
     <Compile Include="ModelLayer\Product.cs" />

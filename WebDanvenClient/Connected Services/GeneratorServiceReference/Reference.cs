@@ -441,10 +441,10 @@ namespace WebDanvenClient.GeneratorServiceReference {
     public interface IGeneratorService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/CreateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/CreateGeneratorResponse")]
-        void CreateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator);
+        WebDanvenClient.GeneratorServiceReference.Generator CreateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/CreateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/CreateGeneratorResponse")]
-        System.Threading.Tasks.Task CreateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator);
+        System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> CreateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/UpdateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/UpdateGeneratorResponse")]
         void UpdateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator);
@@ -486,11 +486,11 @@ namespace WebDanvenClient.GeneratorServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void CreateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator) {
-            base.Channel.CreateGenerator(generator);
+        public WebDanvenClient.GeneratorServiceReference.Generator CreateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator) {
+            return base.Channel.CreateGenerator(generator);
         }
         
-        public System.Threading.Tasks.Task CreateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator) {
+        public System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> CreateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator) {
             return base.Channel.CreateGeneratorAsync(generator);
         }
         
