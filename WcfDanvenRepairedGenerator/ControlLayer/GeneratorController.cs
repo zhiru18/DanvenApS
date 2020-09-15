@@ -17,5 +17,9 @@ namespace WcfDanvenRepairedGenerator.ControlLayer {
         public Generator CreateGenerator(Generator generator) {
             return generatorDB.Insert(generator);
         }
+
+        public IEnumerable<Generator> GetAll() {
+            return generatorDB.GetAll();
+        }
     }
 }

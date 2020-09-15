@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             conString = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
         }
         public Generator Insert(Generator generator) {
-            Generator insertGenenrator = null;
+            Generator insertGenerator = null;
             CustomerDB customerDB = new CustomerDB();
             ProductDB productDB = new ProductDB();
             string telephone = generator.Customer.Telephone;
@@ -47,16 +48,35 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
                             cmdInsertGenerator.ExecuteNonQuery();
                             generator.Product = product;
                             generator.Customer = customer;
-                            insertGenenrator = generator;
+                            insertGenerator = generator;
                         }
                     } catch (SqlException se) {
                         throw new Exception();
                     }
                 }
             }
-            return insertGenenrator;
+            return insertGenerator;
         }
         public IEnumerable<Generator> GetAll() {
+            List<Generator> generators = new List<Generator>();
+            using (SqlConnection con = new SqlConnection(conString)) {
+                con.Open();
+                using (SqlCommand cmdGetGenerator = con.CreateCommand()) {
+                    cmdGetGenerator.CommandText = "SELECT * FROM RepairedGenerator";
+                    SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
+
+                    while (generatorReader.Read()) {
+                        object[] values = new object[5];
+                        var columns = generatorReader.GetValues(values);
+
+                        generators.Add(MapGenerator(generatorReader));
+                    }
+                }
+            }
+        }
+
+        private static Generator MapGenerator(IDataReader generatorReader) {
+
             throw new NotImplementedException();
         }
 

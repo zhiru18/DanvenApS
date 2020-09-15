@@ -16,7 +16,7 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
         }
 
         public IEnumerable<Generator> GetAll() {
-            throw new NotImplementedException();
+            return generatorController.GetAll();
         }
         public void UpdateGenerator(Generator generator) {
             throw new NotImplementedException();
