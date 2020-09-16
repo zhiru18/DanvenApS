@@ -11,13 +11,15 @@ using WcfDanvenRepairedGenerator.ModelLayer;
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
     public class GeneratorDB : IGeneratorDB {
         private string conString;
+        private static ICustomerDB customerDB;
+        private static IProductDB productDB;
         public GeneratorDB() {
             conString = ConfigurationManager.ConnectionStrings["Con"].ConnectionString;
+            customerDB = new CustomerDB();
+            productDB = new ProductDB();
         }
         public Generator Insert(Generator generator) {
-            Generator insertGenerator = null;
-            CustomerDB customerDB = new CustomerDB();
-            ProductDB productDB = new ProductDB();
+            Generator insertGenerator = null;         
             string telephone = generator.Customer.Telephone;
             string productType = generator.Product.ProductType;
             string invoice = generator.Product.InvoiceNumber;
@@ -66,18 +68,33 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
                     SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
 
                     while (generatorReader.Read()) {
-                        object[] values = new object[5];
-                        var columns = generatorReader.GetValues(values);
-
                         generators.Add(MapGenerator(generatorReader));
                     }
                 }
             }
+            return generators;
         }
 
         private static Generator MapGenerator(IDataReader generatorReader) {
+            int customerId = generatorReader.GetInt32(10);
+            int productId = generatorReader.GetInt32(9);
+            Generator generator = new Generator {
+               Id = generatorReader.GetInt32(0),
+               IsRepaired = generatorReader.GetBoolean(1),
+               TypeNumber = generatorReader.GetString(2),
+               SerialNumber = generatorReader.GetString(3),
+               RunningHours = generatorReader.GetString(4),
+               InstallationDate = generatorReader.GetString(5),
+               GeneratorApplication = generatorReader.GetString(6),
+               ErrorDescription = generatorReader.GetString(7),
+               AdditionalInformation = generatorReader.GetString(8)
+            };
+            Customer customer = customerDB.GetCustomerById(customerId);
+            Product product = productDB.GetProductById(productId);
+            generator.Customer = customer;
+            generator.Product = product;
 
-            throw new NotImplementedException();
+            return generator;
         }
 
         public void UpdateGenerator(Generator generator) {

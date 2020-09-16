@@ -47,5 +47,28 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
                 InvoiceNumber = productReader.GetString(3)
             };
         }
+
+        public Product GetProductById(int productId) {
+            Product product = null;
+            using (SqlConnection connection = new SqlConnection(conString)) {
+                try {
+                    connection.Open();
+                    using (SqlCommand cmdGetProd = connection.CreateCommand()) {
+                        cmdGetProd.CommandText = "SELECT * FROM Product WHERE id=@id";
+                        cmdGetProd.Parameters.AddWithValue("@id", productId);
+                        SqlDataReader productReader = cmdGetProd.ExecuteReader();
+
+                        if (productReader.Read()) {
+                            product = MapProduct(productReader);
+                        }
+                    }
+
+                } catch (SqlException se) {
+                    throw new Exception();
+                }
+            }
+            return product;
+
+        }
     }
 }

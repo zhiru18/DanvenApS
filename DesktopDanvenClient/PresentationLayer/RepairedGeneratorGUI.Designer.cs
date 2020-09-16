@@ -23,25 +23,25 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.generatorListBox = new System.Windows.Forms.ListBox();
+            this.RepairedGeneratorListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // generatorListBox
+            // RepairedGeneratorListBox
             // 
-            this.generatorListBox.FormattingEnabled = true;
-            this.generatorListBox.ItemHeight = 20;
-            this.generatorListBox.Location = new System.Drawing.Point(12, 55);
-            this.generatorListBox.Name = "generatorListBox";
-            this.generatorListBox.Size = new System.Drawing.Size(263, 304);
-            this.generatorListBox.TabIndex = 0;
-            this.generatorListBox.SelectedIndexChanged += new System.EventHandler(this.generatorListBox_SelectedIndexChanged);
+            this.RepairedGeneratorListBox.FormattingEnabled = true;
+            this.RepairedGeneratorListBox.ItemHeight = 20;
+            this.RepairedGeneratorListBox.Location = new System.Drawing.Point(12, 55);
+            this.RepairedGeneratorListBox.Name = "RepairedGeneratorListBox";
+            this.RepairedGeneratorListBox.Size = new System.Drawing.Size(263, 304);
+            this.RepairedGeneratorListBox.TabIndex = 0;
+            this.RepairedGeneratorListBox.SelectedIndexChanged += new System.EventHandler(this.generatorListBox_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 488);
-            this.Controls.Add(this.generatorListBox);
+            this.Controls.Add(this.RepairedGeneratorListBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -50,7 +50,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox generatorListBox;
+        private System.Windows.Forms.ListBox RepairedGeneratorListBox;
     }
 }
 

@@ -46,5 +46,27 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
                 Telephone = customerReader.GetString(5)
             };
         }
+
+        public Customer GetCustomerById(int customerId) {
+            Customer customer = null;
+            using (SqlConnection connection = new SqlConnection(conString)) {
+                try {
+                    connection.Open();
+                    using (SqlCommand cmdGetCustomer = connection.CreateCommand()) {
+                        cmdGetCustomer.CommandText = "SELECT * FROM Customer WHERE id = @id";
+                        cmdGetCustomer.Parameters.AddWithValue("@id", customerId);
+                        SqlDataReader customerReader = cmdGetCustomer.ExecuteReader();
+
+                        if (customerReader.Read()) {
+                            customer = MapCustomer(customerReader);
+                        }
+                    }
+
+                } catch (SqlException se) {
+                    throw new Exception();
+                }
+            }
+            return customer;
+        }
     }
 }

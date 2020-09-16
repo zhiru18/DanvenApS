@@ -11,6 +11,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfDanvenRepairedGenerator", "WcfDanvenRepairedGenerator\WcfDanvenRepairedGenerator.csproj", "{4088C251-8A31-48C6-AC01-658A790CBF24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopDanvenClient", "DesktopDanvenClient\DesktopDanvenClient.csproj", "{8B9029D8-4FA6-4400-9692-1E8DC751E9AE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4088C251-8A31-48C6-AC01-658A790CBF24} = {4088C251-8A31-48C6-AC01-658A790CBF24}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

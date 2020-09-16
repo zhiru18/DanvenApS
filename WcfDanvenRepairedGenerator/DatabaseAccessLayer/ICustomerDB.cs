@@ -8,5 +8,6 @@ using WcfDanvenRepairedGenerator.ModelLayer;
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
     interface ICustomerDB {
         Customer GetCustomerByTelephone(string telephone);
+        Customer GetCustomerById(int customerId);
     }
 }

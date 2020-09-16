@@ -8,5 +8,6 @@ using WcfDanvenRepairedGenerator.ModelLayer;
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
     interface IProductDB {
         Product GetProductByTypeInvoice(string productType, string invoice);
+        Product GetProductById(int productId);
     }
 }

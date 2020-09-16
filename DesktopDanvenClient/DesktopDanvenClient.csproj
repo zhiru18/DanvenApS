@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\GeneratorServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ControlLayer\GeneratorController.cs" />
+    <Compile Include="ModelLayer\ClientCustomer.cs" />
+    <Compile Include="ModelLayer\ClientGenerator.cs" />
+    <Compile Include="ModelLayer\ClientProduct.cs" />
     <Compile Include="PresentationLayer\RepairedGeneratorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +65,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLayer\GeneratorModelConverter.cs" />
+    <Compile Include="ServiceLayer\GeneratorServiceAccess.cs" />
     <EmbeddedResource Include="PresentationLayer\RepairedGeneratorGUI.resx">
       <DependentUpon>RepairedGeneratorGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +79,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\GeneratorServiceReference\DesktopDanvenClient.GeneratorServiceReference.Generator.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeneratorServiceReference\service.wsdl" />
+    <None Include="Connected Services\GeneratorServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneratorServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneratorServiceReference\WcfDanvenRepairedGenerator.ModelLayer.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,9 +106,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ControlLayer\" />
-    <Folder Include="ModelLayer\" />
-    <Folder Include="ServiceLayer\" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GeneratorServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneratorServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneratorServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneratorServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
