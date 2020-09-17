@@ -14,5 +14,9 @@ namespace DesktopDanvenClient.ControlLayer {
             return generatorServiceAccess.GetAll();
         }
 
+        public ClientGenerator GetById(int generatorId) {
+            return generatorServiceAccess.GetById(generatorId);
+            
+        }
     }
 }

@@ -55,18 +55,19 @@
             this.APLabel = new System.Windows.Forms.Label();
             this.ISDTextBox = new System.Windows.Forms.TextBox();
             this.ISDLabel = new System.Windows.Forms.Label();
-            this.RNTextBox = new System.Windows.Forms.TextBox();
-            this.SNTextBox = new System.Windows.Forms.TextBox();
+            this.GRHTextBox = new System.Windows.Forms.TextBox();
+            this.GSNTextBox = new System.Windows.Forms.TextBox();
             this.GdLabel = new System.Windows.Forms.Label();
             this.GIdLabel = new System.Windows.Forms.Label();
             this.RepairedLabel = new System.Windows.Forms.Label();
-            this.IdTextBox = new System.Windows.Forms.TextBox();
+            this.GIdTextBox = new System.Windows.Forms.TextBox();
             this.GTyLabel = new System.Windows.Forms.Label();
             this.GTyTextBox = new System.Windows.Forms.TextBox();
             this.SNLabel = new System.Windows.Forms.Label();
             this.RHLabel = new System.Windows.Forms.Label();
             this.CusDLabel = new System.Windows.Forms.Label();
             this.UpButton = new System.Windows.Forms.Button();
+            this.UpLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,12 +117,12 @@
             this.tableLayoutPanel1.Controls.Add(this.APLabel, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.ISDTextBox, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.ISDLabel, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.RNTextBox, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.SNTextBox, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.GRHTextBox, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.GSNTextBox, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.GdLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.GIdLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.RepairedLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.IdTextBox, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.GIdTextBox, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.GTyLabel, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.GTyTextBox, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.SNLabel, 1, 4);
@@ -403,19 +404,19 @@
             this.ISDLabel.TabIndex = 9;
             this.ISDLabel.Text = "Installation date:";
             // 
-            // RNTextBox
+            // GRHTextBox
             // 
-            this.RNTextBox.Location = new System.Drawing.Point(176, 153);
-            this.RNTextBox.Name = "RNTextBox";
-            this.RNTextBox.Size = new System.Drawing.Size(188, 26);
-            this.RNTextBox.TabIndex = 8;
+            this.GRHTextBox.Location = new System.Drawing.Point(176, 153);
+            this.GRHTextBox.Name = "GRHTextBox";
+            this.GRHTextBox.Size = new System.Drawing.Size(188, 26);
+            this.GRHTextBox.TabIndex = 8;
             // 
-            // SNTextBox
+            // GSNTextBox
             // 
-            this.SNTextBox.Location = new System.Drawing.Point(176, 123);
-            this.SNTextBox.Name = "SNTextBox";
-            this.SNTextBox.Size = new System.Drawing.Size(188, 26);
-            this.SNTextBox.TabIndex = 7;
+            this.GSNTextBox.Location = new System.Drawing.Point(176, 123);
+            this.GSNTextBox.Name = "GSNTextBox";
+            this.GSNTextBox.Size = new System.Drawing.Size(188, 26);
+            this.GSNTextBox.TabIndex = 7;
             // 
             // GdLabel
             // 
@@ -445,12 +446,12 @@
             this.RepairedLabel.TabIndex = 2;
             this.RepairedLabel.Text = "Repaired:";
             // 
-            // IdTextBox
+            // GIdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(176, 33);
-            this.IdTextBox.Name = "IdTextBox";
-            this.IdTextBox.Size = new System.Drawing.Size(188, 26);
-            this.IdTextBox.TabIndex = 3;
+            this.GIdTextBox.Location = new System.Drawing.Point(176, 33);
+            this.GIdTextBox.Name = "GIdTextBox";
+            this.GIdTextBox.Size = new System.Drawing.Size(188, 26);
+            this.GIdTextBox.TabIndex = 3;
             // 
             // GTyLabel
             // 
@@ -504,11 +505,20 @@
             this.UpButton.Text = "Update";
             this.UpButton.UseVisualStyleBackColor = true;
             // 
+            // UpLabel
+            // 
+            this.UpLabel.AutoSize = true;
+            this.UpLabel.Location = new System.Drawing.Point(88, 829);
+            this.UpLabel.Name = "UpLabel";
+            this.UpLabel.Size = new System.Drawing.Size(0, 20);
+            this.UpLabel.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 859);
+            this.Controls.Add(this.UpLabel);
             this.Controls.Add(this.UpButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.RepairedGeneratorListBox);
@@ -517,6 +527,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -535,12 +546,12 @@
         private System.Windows.Forms.Label APLabel;
         private System.Windows.Forms.TextBox ISDTextBox;
         private System.Windows.Forms.Label ISDLabel;
-        private System.Windows.Forms.TextBox RNTextBox;
-        private System.Windows.Forms.TextBox SNTextBox;
+        private System.Windows.Forms.TextBox GRHTextBox;
+        private System.Windows.Forms.TextBox GSNTextBox;
         private System.Windows.Forms.Label GdLabel;
         private System.Windows.Forms.Label GIdLabel;
         private System.Windows.Forms.Label RepairedLabel;
-        private System.Windows.Forms.TextBox IdTextBox;
+        private System.Windows.Forms.TextBox GIdTextBox;
         private System.Windows.Forms.Label GTyLabel;
         private System.Windows.Forms.TextBox GTyTextBox;
         private System.Windows.Forms.Label SNLabel;
@@ -566,6 +577,7 @@
         private System.Windows.Forms.Label CusDLabel;
         private System.Windows.Forms.ComboBox ReComboBox;
         private System.Windows.Forms.Button UpButton;
+        private System.Windows.Forms.Label UpLabel;
     }
 }
 

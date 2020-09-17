@@ -457,6 +457,12 @@ namespace DesktopDanvenClient.GeneratorServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetAll", ReplyAction="http://tempuri.org/IGeneratorService/GetAllResponse")]
         System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator[]> GetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetById", ReplyAction="http://tempuri.org/IGeneratorService/GetByIdResponse")]
+        DesktopDanvenClient.GeneratorServiceReference.Generator GetById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetById", ReplyAction="http://tempuri.org/IGeneratorService/GetByIdResponse")]
+        System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator> GetByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -508,6 +514,14 @@ namespace DesktopDanvenClient.GeneratorServiceReference {
         
         public System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator[]> GetAllAsync() {
             return base.Channel.GetAllAsync();
+        }
+        
+        public DesktopDanvenClient.GeneratorServiceReference.Generator GetById(int id) {
+            return base.Channel.GetById(id);
+        }
+        
+        public System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator> GetByIdAsync(int id) {
+            return base.Channel.GetByIdAsync(id);
         }
     }
 }

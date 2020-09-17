@@ -15,5 +15,14 @@ namespace DesktopDanvenClient.ServiceLayer {
                 return clientGenerators;
             }
         }
+
+        public ClientGenerator GetById(int generatorId) {
+            using (GeneratorServiceClient proxy = new GeneratorServiceClient()) {
+                var serviceGenerator = proxy.GetById(generatorId);
+                ClientGenerator clientGenerator = GeneratorModelConverter.ConvertFromServiceGeneratorToClientGenerator(serviceGenerator);
+                return clientGenerator;
+            }
+
+        }
     }
 }
