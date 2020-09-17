@@ -18,6 +18,11 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
         public IEnumerable<Generator> GetAll() {
             return generatorController.GetAll();
         }
+
+        public Generator GetById(int id) {
+            return generatorController.GetById(id);
+        }
+
         public void UpdateGenerator(Generator generator) {
             throw new NotImplementedException();
         }

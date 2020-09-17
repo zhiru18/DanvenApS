@@ -17,6 +17,9 @@ namespace DesktopDanvenClient {
             InitializeComponent();
             generatorController = new GeneratorController();
             UpdateGeneratorListBox();
+            ReComboBox.Items.Add("True");
+            ReComboBox.Items.Add("False");
+
         }
 
         private void UpdateGeneratorListBox() {
@@ -30,5 +33,7 @@ namespace DesktopDanvenClient {
         private void generatorListBox_SelectedIndexChanged(object sender, EventArgs e) {
 
         }
+
+      
     }
 }

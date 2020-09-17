@@ -16,5 +16,7 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
         void UpdateGenerator(Generator generator);
         [OperationContract]
         IEnumerable<Generator> GetAll();
+        [OperationContract]
+        Generator GetById(int id);
     }
 }

@@ -29,7 +29,7 @@ namespace DesktopDanvenClient.ModelLayer {
             this.IsRepaired = false;
         }
         public override string ToString() {
-            return $"{Id}  {TypeNumber} Customer:{Customer.Id}";
+            return $"{Id}  {TypeNumber} Repaired:{IsRepaired}";
         }
     }
 }

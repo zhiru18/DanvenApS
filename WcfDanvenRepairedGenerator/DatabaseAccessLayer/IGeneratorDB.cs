@@ -10,6 +10,6 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
         Generator Insert(Generator generator);
         void UpdateGenerator(Generator generator);
         IEnumerable<Generator> GetAll();
-
+        Generator GetById(int id);
     }
 }

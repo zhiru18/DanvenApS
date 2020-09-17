@@ -100,5 +100,22 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
         public void UpdateGenerator(Generator generator) {
             throw new NotImplementedException();
         }
+
+        public Generator GetById(int id) {
+            Generator generator = null;
+            using (SqlConnection con = new SqlConnection(conString)) {
+                con.Open();
+                using (SqlCommand cmdGetGenerator = con.CreateCommand()) {
+                    cmdGetGenerator.CommandText = "SELECT * FROM RepairedGenerator WHERE id = @id";
+                    cmdGetGenerator.Parameters.AddWithValue("@id", id);
+                   SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
+
+                    if (generatorReader.Read()) {
+                       generator= MapGenerator(generatorReader);
+                    }
+                }
+            }
+            return generator;
+        }
     }
 }

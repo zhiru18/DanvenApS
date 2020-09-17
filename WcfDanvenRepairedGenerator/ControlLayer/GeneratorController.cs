@@ -21,5 +21,9 @@ namespace WcfDanvenRepairedGenerator.ControlLayer {
         public IEnumerable<Generator> GetAll() {
             return generatorDB.GetAll();
         }
+
+        internal Generator GetById(int id) {
+            return generatorDB.GetById(id);
+        }
     }
 }
