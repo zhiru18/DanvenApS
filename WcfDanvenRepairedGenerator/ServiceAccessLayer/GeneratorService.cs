@@ -23,8 +23,8 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
             return generatorController.GetById(id);
         }
 
-        public void UpdateGenerator(Generator generator) {
-            throw new NotImplementedException();
+        public Generator UpdateGenerator(Generator generator) {
+            return generatorController.UpdateGenerator(generator);
         }
     }
 }

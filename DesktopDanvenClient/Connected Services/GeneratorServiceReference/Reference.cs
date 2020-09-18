@@ -447,10 +447,10 @@ namespace DesktopDanvenClient.GeneratorServiceReference {
         System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator> CreateGeneratorAsync(DesktopDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/UpdateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/UpdateGeneratorResponse")]
-        void UpdateGenerator(DesktopDanvenClient.GeneratorServiceReference.Generator generator);
+        DesktopDanvenClient.GeneratorServiceReference.Generator UpdateGenerator(DesktopDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/UpdateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/UpdateGeneratorResponse")]
-        System.Threading.Tasks.Task UpdateGeneratorAsync(DesktopDanvenClient.GeneratorServiceReference.Generator generator);
+        System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator> UpdateGeneratorAsync(DesktopDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetAll", ReplyAction="http://tempuri.org/IGeneratorService/GetAllResponse")]
         DesktopDanvenClient.GeneratorServiceReference.Generator[] GetAll();
@@ -500,11 +500,11 @@ namespace DesktopDanvenClient.GeneratorServiceReference {
             return base.Channel.CreateGeneratorAsync(generator);
         }
         
-        public void UpdateGenerator(DesktopDanvenClient.GeneratorServiceReference.Generator generator) {
-            base.Channel.UpdateGenerator(generator);
+        public DesktopDanvenClient.GeneratorServiceReference.Generator UpdateGenerator(DesktopDanvenClient.GeneratorServiceReference.Generator generator) {
+            return base.Channel.UpdateGenerator(generator);
         }
         
-        public System.Threading.Tasks.Task UpdateGeneratorAsync(DesktopDanvenClient.GeneratorServiceReference.Generator generator) {
+        public System.Threading.Tasks.Task<DesktopDanvenClient.GeneratorServiceReference.Generator> UpdateGeneratorAsync(DesktopDanvenClient.GeneratorServiceReference.Generator generator) {
             return base.Channel.UpdateGeneratorAsync(generator);
         }
         

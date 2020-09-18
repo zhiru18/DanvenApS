@@ -68,5 +68,22 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             }
             return customer;
         }
+
+        public void UpdateCustomer(Customer customer) {
+            using (SqlConnection connection = new SqlConnection(conString)) {
+                connection.Open();
+                using (SqlCommand cmdUpdateCustomer = connection.CreateCommand()) {
+                    cmdUpdateCustomer.CommandText = "UPDATE Customer SET companyName = @companyName, companyAddress = @companyAddress, contactPersonName = @contactPersonName," +
+                    "companyEmail=@companyEmail, telephone=@telephone  WHERE id = @id;";
+                    cmdUpdateCustomer.Parameters.AddWithValue("@id", customer.Id);
+                    cmdUpdateCustomer.Parameters.AddWithValue("@companyName", customer.CompanyName);
+                    cmdUpdateCustomer.Parameters.AddWithValue("@companyAddress", customer.CompanyAddress);
+                    cmdUpdateCustomer.Parameters.AddWithValue("@contactPersonName", customer.ContactPersonName);
+                    cmdUpdateCustomer.Parameters.AddWithValue("@companyEmail", customer.Email);
+                    cmdUpdateCustomer.Parameters.AddWithValue("@telephone", customer.Telephone);
+                    cmdUpdateCustomer.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

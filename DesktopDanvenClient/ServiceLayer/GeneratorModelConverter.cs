@@ -13,6 +13,8 @@ namespace DesktopDanvenClient.ServiceLayer {
             GeneratorServiceReference.Customer customer = ConvertFromClientCustomerToServiceCustomer(clientGenerator.Customer);
             GeneratorServiceReference.Product product = ConvertFromClientProductToServiceProduct(clientGenerator.Product);
             GeneratorServiceReference.Generator generator = new GeneratorServiceReference.Generator() {
+                Id = clientGenerator.Id,
+                IsRepaired = clientGenerator.IsRepaired,
                 TypeNumber = clientGenerator.TypeNumber,
                 SerialNumber = clientGenerator.SerialNumber,
                 RunningHours = clientGenerator.RunningHours,
@@ -37,6 +39,7 @@ namespace DesktopDanvenClient.ServiceLayer {
 
         private static GeneratorServiceReference.Customer ConvertFromClientCustomerToServiceCustomer(ClientCustomer clientCustomer) {
             GeneratorServiceReference.Customer customer = new GeneratorServiceReference.Customer() {
+                Id = clientCustomer.Id,
                 CompanyName = clientCustomer.CompanyName,
                 CompanyAddress = clientCustomer.CompanyAddress,
                 ContactPersonName = clientCustomer.ContactPersonName,
@@ -48,6 +51,7 @@ namespace DesktopDanvenClient.ServiceLayer {
 
         private static GeneratorServiceReference.Product ConvertFromClientProductToServiceProduct(ClientProduct clientProduct) {
             GeneratorServiceReference.Product product = new GeneratorServiceReference.Product() {
+                Id = clientProduct.Id,
                 ProductType = clientProduct.ProductType,
                 ProductSerialNumber = clientProduct.ProductSerialNumber,
                 InvoiceNumber = clientProduct.InvoiceNumber
@@ -56,20 +60,25 @@ namespace DesktopDanvenClient.ServiceLayer {
         }
 
         internal static ClientGenerator ConvertFromServiceGeneratorToClientGenerator(GeneratorServiceReference.Generator serviceGenerator) {
-            ClientCustomer clientcustomer = ConvertFromServiceCustomerToClientCustomer(serviceGenerator.Customer);
-            ClientProduct clientProduct = ConvertFromServiceProductClientToProduct(serviceGenerator.Product);
-            ClientGenerator clientGenerator = new ClientGenerator() {
-                Id = serviceGenerator.Id,
-                TypeNumber = serviceGenerator.TypeNumber,
-                SerialNumber = serviceGenerator.SerialNumber,
-                RunningHours = serviceGenerator.RunningHours,
-                InstallationDate = serviceGenerator.InstallationDate,
-                GeneratorApplication = serviceGenerator.GeneratorApplication,
-                ErrorDescription = serviceGenerator.ErrorDescription,
-                AdditionalInformation = serviceGenerator.AdditionalInformation,
-                Customer = clientcustomer,
-                Product = clientProduct
-            };
+            ClientGenerator clientGenerator = null;
+            if (serviceGenerator != null) {
+                ClientCustomer clientcustomer = ConvertFromServiceCustomerToClientCustomer(serviceGenerator.Customer);
+                ClientProduct clientProduct = ConvertFromServiceProductClientToProduct(serviceGenerator.Product);
+                ClientGenerator clientGenerator1 = new ClientGenerator() {
+                    Id = serviceGenerator.Id,
+                    IsRepaired = serviceGenerator.IsRepaired,
+                    TypeNumber = serviceGenerator.TypeNumber,
+                    SerialNumber = serviceGenerator.SerialNumber,
+                    RunningHours = serviceGenerator.RunningHours,
+                    InstallationDate = serviceGenerator.InstallationDate,
+                    GeneratorApplication = serviceGenerator.GeneratorApplication,
+                    ErrorDescription = serviceGenerator.ErrorDescription,
+                    AdditionalInformation = serviceGenerator.AdditionalInformation,
+                    Customer = clientcustomer,
+                    Product = clientProduct
+                };
+                clientGenerator = clientGenerator1;
+            }
             return clientGenerator;
         }
 

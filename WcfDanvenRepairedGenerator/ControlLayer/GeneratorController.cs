@@ -22,8 +22,12 @@ namespace WcfDanvenRepairedGenerator.ControlLayer {
             return generatorDB.GetAll();
         }
 
-        internal Generator GetById(int id) {
+        public Generator GetById(int id) {
             return generatorDB.GetById(id);
+        }
+
+        public Generator UpdateGenerator(Generator generator) {
+            return generatorDB.UpdateGenerator(generator);
         }
     }
 }

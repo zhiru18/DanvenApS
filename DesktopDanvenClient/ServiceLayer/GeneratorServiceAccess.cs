@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using DesktopDanvenClient.GeneratorServiceReference;
@@ -23,6 +24,15 @@ namespace DesktopDanvenClient.ServiceLayer {
                 return clientGenerator;
             }
 
+        }
+
+        public ClientGenerator UpdateGenerator(ClientGenerator clientGenerator) {
+            Generator serviceGenerator = GeneratorModelConverter.ConvertFromClientGeneratorToServiceGenerator(clientGenerator);
+            using (GeneratorServiceClient proxy = new GeneratorServiceClient()) {         
+                var serviceGenerator1 = proxy.UpdateGenerator(serviceGenerator);
+                ClientGenerator clientGenerator1 = GeneratorModelConverter.ConvertFromServiceGeneratorToClientGenerator(serviceGenerator1);
+                return clientGenerator1;
+            }
         }
     }
 }

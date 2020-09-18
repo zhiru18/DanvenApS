@@ -97,10 +97,38 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             return generator;
         }
 
-        public void UpdateGenerator(Generator generator) {
-            throw new NotImplementedException();
+        public Generator UpdateGenerator(Generator generator) {
+            Generator updateGenerator = null;
+            Generator g = GetById(generator.Id);
+            Customer c = customerDB.GetCustomerById(generator.Customer.Id);
+            Product p = productDB.GetProductById(generator.Product.Id);
+            if (g != null & c != null & p != null) {
+            using (SqlConnection con = new SqlConnection(conString)) {
+                    con.Open();
+                    using (SqlCommand cmdUpdateGenerator = con.CreateCommand()) {
+                        cmdUpdateGenerator.CommandText = "UPDATE RepairedGenerator SET isRepaired=@isRepaired, typeNumber=@typeNumber," +
+                            "serialNumber=@serialNumber, runningHours=@runningHours, installationDate=@installationDate, generatorApplication=@generatorApplication," +
+                            "errorDescription=@errorDescription, additionalInformation=@additionalInformation, productId=@productId, customerId=@customerId WHERE id = @id";
+                        cmdUpdateGenerator.Parameters.AddWithValue("@id", generator.Id);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@isRepaired", generator.IsRepaired);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@typeNumber", generator.TypeNumber);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@serialNumber", generator.SerialNumber);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@runningHours", generator.RunningHours);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@installationDate", generator.InstallationDate);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@generatorApplication", generator.GeneratorApplication);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@errorDescription", generator.ErrorDescription);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@additionalInformation", generator.AdditionalInformation);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@productId", generator.Product.Id);
+                        cmdUpdateGenerator.Parameters.AddWithValue("@customerId", generator.Customer.Id);
+                        cmdUpdateGenerator.ExecuteNonQuery();
+                        customerDB.UpdateCustomer(generator.Customer);
+                        productDB.UpdateProduct(generator.Product);
+                        updateGenerator = GetById(generator.Id);
+                    }
+                }
+            }
+            return updateGenerator;
         }
-
         public Generator GetById(int id) {
             Generator generator = null;
             using (SqlConnection con = new SqlConnection(conString)) {

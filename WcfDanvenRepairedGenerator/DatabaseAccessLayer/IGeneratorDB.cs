@@ -8,7 +8,7 @@ using WcfDanvenRepairedGenerator.ModelLayer;
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
     interface IGeneratorDB {
         Generator Insert(Generator generator);
-        void UpdateGenerator(Generator generator);
+        Generator UpdateGenerator(Generator generator);
         IEnumerable<Generator> GetAll();
         Generator GetById(int id);
     }

@@ -64,7 +64,7 @@ namespace DesktopDanvenClient {
                 Id = Int32.Parse(CIdTextBox.Text),
                 CompanyName = CNTextBox.Text,
                 CompanyAddress = AddTextBox.Text,
-                ContactPersonName = CNTextBox.Text,
+                ContactPersonName = ContTextBox.Text,
                 Email = EmTextBox.Text,
                 Telephone = TelTextBox.Text
             };
@@ -89,6 +89,15 @@ namespace DesktopDanvenClient {
                 Customer = clientCustomer,
                 Product = clientProduct
             };
+            ClientGenerator generator = generatorController.UpdateGenerator(clientGenerator);
+            if (generator != null) {
+                UpLabel.ForeColor = Color.Green;
+                UpLabel.Text = "Generator is upadteded " + "Generator Id:" + generator.Id + "Generator Type:" + generator.TypeNumber+clientGenerator.IsRepaired.ToString();
+                UpdateGeneratorListBox();
+            } else {
+                UpLabel.ForeColor = Color.Red;
+                UpLabel.Text = "Input valid Generator Id or Product Id or Customer Id!";
+            }
         }
     }
 }

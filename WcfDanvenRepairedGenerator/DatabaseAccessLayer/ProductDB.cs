@@ -70,5 +70,20 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             return product;
 
         }
+
+        public void UpdateProduct(Product product) {
+            using (SqlConnection connection = new SqlConnection(conString)) {
+                connection.Open();
+                using (SqlCommand cmdUpdateProduct = connection.CreateCommand()) {
+                    cmdUpdateProduct.CommandText = "UPDATE Product SET productType= @productType, productSerialNumber=@productSerialNumber," +
+                        "invoiceNumber=@invoiceNumber WHERE id=@id";
+                    cmdUpdateProduct.Parameters.AddWithValue("@id", product.Id);
+                    cmdUpdateProduct.Parameters.AddWithValue("@productType", product.ProductType);
+                    cmdUpdateProduct.Parameters.AddWithValue("@productSerialNumber", product.ProductSerialNumber);
+                    cmdUpdateProduct.Parameters.AddWithValue("@invoiceNumber", product.InvoiceNumber);
+                    cmdUpdateProduct.ExecuteNonQuery();
+                }
+             }
+        }
     }
 }
