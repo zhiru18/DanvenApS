@@ -13,7 +13,7 @@ namespace WcfDanvenRepairedGenerator.ServiceAccessLayer {
         [OperationContract]
         Generator CreateGenerator(Generator generator);
         [OperationContract]
-        void UpdateGenerator(Generator generator);
+        Generator UpdateGenerator(Generator generator);
         [OperationContract]
         IEnumerable<Generator> GetAll();
         [OperationContract]

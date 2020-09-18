@@ -504,6 +504,7 @@
             this.UpButton.TabIndex = 2;
             this.UpButton.Text = "Update";
             this.UpButton.UseVisualStyleBackColor = true;
+            this.UpButton.Click += new System.EventHandler(this.UpButton_Click);
             // 
             // UpLabel
             // 
