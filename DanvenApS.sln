@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopDanvenClient", "Desk
 		{4088C251-8A31-48C6-AC01-658A790CBF24} = {4088C251-8A31-48C6-AC01-658A790CBF24}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0D85443B-AFDD-4A53-AFE1-3E5A81D2BA63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorServiceTest", "GeneratorServiceTest\GeneratorServiceTest.csproj", "{3449FDE3-3D92-4497-B4D4-40A4825928D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{8B9029D8-4FA6-4400-9692-1E8DC751E9AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B9029D8-4FA6-4400-9692-1E8DC751E9AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B9029D8-4FA6-4400-9692-1E8DC751E9AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3449FDE3-3D92-4497-B4D4-40A4825928D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3449FDE3-3D92-4497-B4D4-40A4825928D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3449FDE3-3D92-4497-B4D4-40A4825928D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3449FDE3-3D92-4497-B4D4-40A4825928D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3449FDE3-3D92-4497-B4D4-40A4825928D2} = {0D85443B-AFDD-4A53-AFE1-3E5A81D2BA63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9E8A3CE-EBDE-4271-871C-5B63735EB04A}
