@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using WcfDanvenRepairedGenerator.ModelLayer;
 
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
-    interface IGeneratorDB {
+    public interface IGeneratorDB {
         Generator Insert(Generator generator);
         Generator UpdateGenerator(Generator generator);
         IEnumerable<Generator> GetAll();
         Generator GetById(int id);
+        Generator GetGeneratorByType(string typeNumber);
+        void Delete(Generator generator);
     }
 }

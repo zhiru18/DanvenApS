@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WcfDanvenRepairedGenerator.ModelLayer;
 
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
-    interface IProductDB {
+   public interface IProductDB {
         Product GetProductByTypeInvoice(string productType, string invoice);
         Product GetProductById(int productId);
         void UpdateProduct(Product product);

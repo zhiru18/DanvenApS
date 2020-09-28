@@ -19,7 +19,7 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             productDB = new ProductDB();
         }
         public Generator Insert(Generator generator) {
-            Generator insertGenerator = null;         
+            Generator insertGenerator = null;
             string telephone = generator.Customer.Telephone;
             string productType = generator.Product.ProductType;
             string invoice = generator.Product.InvoiceNumber;
@@ -79,15 +79,15 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             int customerId = generatorReader.GetInt32(10);
             int productId = generatorReader.GetInt32(9);
             Generator generator = new Generator {
-               Id = generatorReader.GetInt32(0),
-               IsRepaired = generatorReader.GetBoolean(1),
-               TypeNumber = generatorReader.GetString(2),
-               SerialNumber = generatorReader.GetString(3),
-               RunningHours = generatorReader.GetString(4),
-               InstallationDate = generatorReader.GetString(5),
-               GeneratorApplication = generatorReader.GetString(6),
-               ErrorDescription = generatorReader.GetString(7),
-               AdditionalInformation = generatorReader.GetString(8)
+                Id = generatorReader.GetInt32(0),
+                IsRepaired = generatorReader.GetBoolean(1),
+                TypeNumber = generatorReader.GetString(2),
+                SerialNumber = generatorReader.GetString(3),
+                RunningHours = generatorReader.GetString(4),
+                InstallationDate = generatorReader.GetString(5),
+                GeneratorApplication = generatorReader.GetString(6),
+                ErrorDescription = generatorReader.GetString(7),
+                AdditionalInformation = generatorReader.GetString(8)
             };
             Customer customer = customerDB.GetCustomerById(customerId);
             Product product = productDB.GetProductById(productId);
@@ -103,7 +103,7 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
             Customer c = customerDB.GetCustomerById(generator.Customer.Id);
             Product p = productDB.GetProductById(generator.Product.Id);
             if (g != null & c != null & p != null) {
-            using (SqlConnection con = new SqlConnection(conString)) {
+                using (SqlConnection con = new SqlConnection(conString)) {
                     con.Open();
                     using (SqlCommand cmdUpdateGenerator = con.CreateCommand()) {
                         cmdUpdateGenerator.CommandText = "UPDATE RepairedGenerator SET isRepaired=@isRepaired, typeNumber=@typeNumber," +
@@ -136,14 +136,43 @@ namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
                 using (SqlCommand cmdGetGenerator = con.CreateCommand()) {
                     cmdGetGenerator.CommandText = "SELECT * FROM RepairedGenerator WHERE id = @id";
                     cmdGetGenerator.Parameters.AddWithValue("@id", id);
-                   SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
+                    SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
 
                     if (generatorReader.Read()) {
-                       generator= MapGenerator(generatorReader);
+                        generator = MapGenerator(generatorReader);
                     }
                 }
             }
             return generator;
+        }
+
+        public Generator GetGeneratorByType(string typeNumber) {
+            Generator generator = null;
+            using (SqlConnection con = new SqlConnection(conString)) {
+                con.Open();
+                using (SqlCommand cmdGetGenerator = con.CreateCommand()) {
+                    cmdGetGenerator.CommandText = "SELECT * FROM RepairedGenerator WHERE typeNumber = @typeNumber";
+                    cmdGetGenerator.Parameters.AddWithValue("@typeNumber", typeNumber);
+                    SqlDataReader generatorReader = cmdGetGenerator.ExecuteReader();
+
+                    if (generatorReader.Read()) {
+                        generator = MapGenerator(generatorReader);
+                    }
+                }
+            }
+            return generator;
+
+        }
+
+        public void Delete(Generator generator) {
+            using (SqlConnection con = new SqlConnection(conString)) {
+                con.Open();
+                using (SqlCommand cmdDeleteGenerator = con.CreateCommand()) {
+                    cmdDeleteGenerator.CommandText = "DELETE FROM RepairedGenerator WHERE id = @id";
+                    cmdDeleteGenerator.Parameters.AddWithValue("@id", generator.Id);
+                    cmdDeleteGenerator.ExecuteNonQuery();
+                }
+            }   
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WcfDanvenRepairedGenerator.ModelLayer;
 
 namespace WcfDanvenRepairedGenerator.DatabaseAccessLayer {
-    interface ICustomerDB {
+    public interface ICustomerDB {
         Customer GetCustomerByTelephone(string telephone);
         Customer GetCustomerById(int customerId);
         void UpdateCustomer(Customer customer);
