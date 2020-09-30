@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorServiceTest", "Gen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTest", "DataTest\DataTest.csproj", "{092E83A2-8756-4167-A543-13D9C3BC4720}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopTest", "DesktopTest\DesktopTest.csproj", "{64A5404E-E7D4-453B-884A-1C81F2A86F54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{092E83A2-8756-4167-A543-13D9C3BC4720}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092E83A2-8756-4167-A543-13D9C3BC4720}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092E83A2-8756-4167-A543-13D9C3BC4720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A5404E-E7D4-453B-884A-1C81F2A86F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A5404E-E7D4-453B-884A-1C81F2A86F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A5404E-E7D4-453B-884A-1C81F2A86F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A5404E-E7D4-453B-884A-1C81F2A86F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3449FDE3-3D92-4497-B4D4-40A4825928D2} = {0D85443B-AFDD-4A53-AFE1-3E5A81D2BA63}
 		{092E83A2-8756-4167-A543-13D9C3BC4720} = {0D85443B-AFDD-4A53-AFE1-3E5A81D2BA63}
+		{64A5404E-E7D4-453B-884A-1C81F2A86F54} = {0D85443B-AFDD-4A53-AFE1-3E5A81D2BA63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A9E8A3CE-EBDE-4271-871C-5B63735EB04A}
