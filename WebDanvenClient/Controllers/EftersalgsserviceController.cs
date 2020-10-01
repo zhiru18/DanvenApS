@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using WebDanvenClient.ControlLayer;
@@ -69,6 +70,29 @@ namespace WebDanvenClient.Controllers
 
         public ActionResult SubSuccess() {
             return View();
+        }
+
+        public void SendEmail(List<string> values) {
+            var senderEmail = new MailAddress("zcao16278@gmail.com", "Sender");
+            var receiverEmail = new MailAddress("1074160@ucn.dk", "Receiver");
+            var password = "Sam4s4a4d";
+            var sub = "Repair Application";
+            var body = $"1. Generator identification\n Type number: {values[0]} \n Serial number:{values[1]} \n";
+            var smtp = new SmtpClient {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(senderEmail.Address, password)
+            };
+            using (var mess = new MailMessage(senderEmail, receiverEmail) {
+                Subject = subject,
+                Body = body
+            }) {
+                smtp.Send(mess);
+            }
+
         }
     }
 }
