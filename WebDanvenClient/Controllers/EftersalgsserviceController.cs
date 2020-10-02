@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
@@ -60,6 +61,7 @@ namespace WebDanvenClient.Controllers
                 };
 
                 ClientGenerator insertGenerator= controlGenerator.CreateGenerator(clientGenerator);
+                SendEmail(values);
                 if (insertGenerator == null) {
                     ViewBag.Message = "Product type or Invoice number or Telephone No. is wrong, you should check and fill again!";
                     return View();
@@ -73,24 +75,24 @@ namespace WebDanvenClient.Controllers
         }
 
         public void SendEmail(List<string> values) {
-            var senderEmail = new MailAddress("zcao16278@gmail.com", "Sender");
-            var receiverEmail = new MailAddress("1074160@ucn.dk", "Receiver");
-            var password = "Sam4s4a4d";
-            var sub = "Repair Application";
-            var body = $"1. Generator identification\n Type number: {values[0]} \n Serial number:{values[1]} \n";
-            var smtp = new SmtpClient {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(senderEmail.Address, password)
-            };
-            using (var mess = new MailMessage(senderEmail, receiverEmail) {
-                Subject = subject,
-                Body = body
-            }) {
-                smtp.Send(mess);
+          
+            MailMessage m = new MailMessage();
+            SmtpClient sc = new SmtpClient();
+            try {
+                m.From = new MailAddress("zcao16278@gmail.com");
+                m.To.Add("1074160@ucn.dk");
+                m.Subject = "This is a Test Mail";
+                m.IsBodyHtml = true;
+                m.Body = $"{values[0]}  {values[1]} ";
+                sc.Host = "smtp.gmail.com";
+                sc.Port = 587;
+                sc.Credentials = new System.Net.NetworkCredential("zcao16278@gmail.com", "Sam4s4a4d");
+
+                sc.EnableSsl = true;
+                sc.Send(m);
+                Response.Write("Email Send successfully");
+            } catch (Exception ex) {
+                Response.Write(ex.Message);
             }
 
         }
