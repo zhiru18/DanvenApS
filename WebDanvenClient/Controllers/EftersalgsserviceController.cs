@@ -81,9 +81,16 @@ namespace WebDanvenClient.Controllers
             try {
                 m.From = new MailAddress("zcao16278@gmail.com");
                 m.To.Add("1074160@ucn.dk");
-                m.Subject = "This is a Test Mail";
+                m.Subject = "New repair application";
                 m.IsBodyHtml = true;
-                m.Body = $"{values[0]}  {values[1]} ";
+                string text = $"1. Generator identification\n Type number:{values[0]}\n Serial number:{values[1]}\n Running hours:{values[2]}\n Installation date:{values[3]}\n Application:{values[4]}\n\n" +
+                    $"2. Product identification\n  Product type:{values[5]}\n Serial number:{values[6]}\n  Invoice number:{values[7]}\n\n" +
+                    $"3. Error description / reason for return\n {values[8]}\n\n" +
+                    $"4. Additional information\n {values[9]}\n\n" +
+                    $"5. Customer data\n Company name:{values[10]}\n  Address:{values[11]}\n Company contact:{values[12]}\n Email:{values[13]}\n Tel. (direct):{values[14]}\n\n";
+                text = text.Replace("\n", "<br>");
+                m.Body =text;
+
                 sc.Host = "smtp.gmail.com";
                 sc.Port = 587;
                 sc.Credentials = new System.Net.NetworkCredential("zcao16278@gmail.com", "Sam4s4a4d");
