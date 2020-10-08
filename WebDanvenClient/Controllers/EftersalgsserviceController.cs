@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebDanvenClient.ControlLayer;
 using WebDanvenClient.Models;
+using WebDanvenClient.ServiceLayer;
 
 namespace WebDanvenClient.Controllers
 {
@@ -18,7 +18,7 @@ namespace WebDanvenClient.Controllers
 
         [HttpPost]
         public ActionResult Index(FormCollection collection) {
-            ControlGenerator controlGenerator = new ControlGenerator();
+            GeneratorServiceAccess generatorServiceAccess = new GeneratorServiceAccess(); 
             var values = new List<string>();
             for (int i = 0; i < collection.Keys.Count; i++) {
                 string value = collection[collection.Keys[i].ToString()];
@@ -58,7 +58,7 @@ namespace WebDanvenClient.Controllers
                     Product = clientProduct
                 };
 
-                ClientGenerator insertGenerator= controlGenerator.CreateGenerator(clientGenerator);
+                ClientGenerator insertGenerator= generatorServiceAccess.CreateGenerator(clientGenerator);
                 if (insertGenerator == null) {
                     ViewBag.Message = "Product type or Invoice number or Telephone No. is wrong, you should check and fill again!";
                     return View();
