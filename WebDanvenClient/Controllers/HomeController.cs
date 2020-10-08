@@ -22,14 +22,6 @@ namespace WebDanvenClient.Controllers {
             return View();
         }
 
-        public ActionResult StandardSeries(int? id) { 
-            ViewBag.Message = "Your application description page.";
-            if (id != null & id > 0) {
-                ViewBag.Situation = id;
-                }           
-            return View();
-        }
-
         public ActionResult Eftersalgsservice(int? id) {
             ViewBag.Message = "Your application description page.";
             if (id != null & id > 0) {
