@@ -63,7 +63,7 @@ namespace DesktopDanvenClient.ServiceLayer {
             ClientGenerator clientGenerator = null;
             if (serviceGenerator != null) {
                 ClientCustomer clientcustomer = ConvertFromServiceCustomerToClientCustomer(serviceGenerator.Customer);
-                ClientProduct clientProduct = ConvertFromServiceProductClientToProduct(serviceGenerator.Product);
+                ClientProduct clientProduct = ConvertFromServiceProductToClientProduct(serviceGenerator.Product);
                 ClientGenerator clientGenerator1 = new ClientGenerator() {
                     Id = serviceGenerator.Id,
                     IsRepaired = serviceGenerator.IsRepaired,
@@ -82,7 +82,7 @@ namespace DesktopDanvenClient.ServiceLayer {
             return clientGenerator;
         }
 
-        private static ClientProduct ConvertFromServiceProductClientToProduct(GeneratorServiceReference.Product product) {
+        private static ClientProduct ConvertFromServiceProductToClientProduct(GeneratorServiceReference.Product product) {
             ClientProduct clientProduct = new ClientProduct() {
                 Id = product.Id,
                 ProductType = product.ProductType,

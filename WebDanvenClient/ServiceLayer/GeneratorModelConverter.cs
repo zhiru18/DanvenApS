@@ -48,7 +48,7 @@ namespace WebDanvenClient.ServiceLayer {
 
         internal static ClientGenerator ConvertFromServiceGeneratorToClientGenerator(GeneratorServiceReference.Generator serviceGenerator) {
             ClientCustomer clientcustomer = ConvertFromServiceCustomerToClientCustomer(serviceGenerator.Customer);
-          ClientProduct clientProduct = ConvertFromServiceProductClientToProduct(serviceGenerator.Product);
+          ClientProduct clientProduct = ConvertFromServiceProductToClientProduct(serviceGenerator.Product);
             ClientGenerator clientGenerator = new ClientGenerator() {
                 TypeNumber = serviceGenerator.TypeNumber,
                 SerialNumber = serviceGenerator.SerialNumber,
@@ -63,7 +63,7 @@ namespace WebDanvenClient.ServiceLayer {
             return clientGenerator;
         }
 
-        private static ClientProduct ConvertFromServiceProductClientToProduct(GeneratorServiceReference.Product product) {
+        private static ClientProduct ConvertFromServiceProductToClientProduct(GeneratorServiceReference.Product product) {
           ClientProduct clientProduct = new ClientProduct() {
                 Id = product.Id,
                 ProductType = product.ProductType,
