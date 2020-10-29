@@ -447,16 +447,22 @@ namespace WebDanvenClient.GeneratorServiceReference {
         System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> CreateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/UpdateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/UpdateGeneratorResponse")]
-        void UpdateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator);
+        WebDanvenClient.GeneratorServiceReference.Generator UpdateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/UpdateGenerator", ReplyAction="http://tempuri.org/IGeneratorService/UpdateGeneratorResponse")]
-        System.Threading.Tasks.Task UpdateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator);
+        System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> UpdateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetAll", ReplyAction="http://tempuri.org/IGeneratorService/GetAllResponse")]
         WebDanvenClient.GeneratorServiceReference.Generator[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetAll", ReplyAction="http://tempuri.org/IGeneratorService/GetAllResponse")]
         System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator[]> GetAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetById", ReplyAction="http://tempuri.org/IGeneratorService/GetByIdResponse")]
+        WebDanvenClient.GeneratorServiceReference.Generator GetById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGeneratorService/GetById", ReplyAction="http://tempuri.org/IGeneratorService/GetByIdResponse")]
+        System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> GetByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -494,11 +500,11 @@ namespace WebDanvenClient.GeneratorServiceReference {
             return base.Channel.CreateGeneratorAsync(generator);
         }
         
-        public void UpdateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator) {
-            base.Channel.UpdateGenerator(generator);
+        public WebDanvenClient.GeneratorServiceReference.Generator UpdateGenerator(WebDanvenClient.GeneratorServiceReference.Generator generator) {
+            return base.Channel.UpdateGenerator(generator);
         }
         
-        public System.Threading.Tasks.Task UpdateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator) {
+        public System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> UpdateGeneratorAsync(WebDanvenClient.GeneratorServiceReference.Generator generator) {
             return base.Channel.UpdateGeneratorAsync(generator);
         }
         
@@ -508,6 +514,14 @@ namespace WebDanvenClient.GeneratorServiceReference {
         
         public System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator[]> GetAllAsync() {
             return base.Channel.GetAllAsync();
+        }
+        
+        public WebDanvenClient.GeneratorServiceReference.Generator GetById(int id) {
+            return base.Channel.GetById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebDanvenClient.GeneratorServiceReference.Generator> GetByIdAsync(int id) {
+            return base.Channel.GetByIdAsync(id);
         }
     }
 }
