@@ -18,6 +18,9 @@ namespace WebDanvenClient.Controllers
             return View();
         }
 
+        //This method creats a new clientGenerator and calls the method CreateGenerator from ControlGenerator to save the generator in the database and the method SendMail to inform the administrative worker.
+        //Param: an FormCollection object.
+        //Return: Is a view.
         [HttpPost]
         public ActionResult Index(FormCollection collection) {
             ControlGenerator controlGenerator = new ControlGenerator();
@@ -74,6 +77,8 @@ namespace WebDanvenClient.Controllers
             return View();
         }
 
+        //This method send a email fra MailAddress"zcao16278@gmail.com" to "1074160@ucn.dk
+        //Param: a list of string.
         public void SendEmail(List<string> values) {
           
             MailMessage m = new MailMessage();
