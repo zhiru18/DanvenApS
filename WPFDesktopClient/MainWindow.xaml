@@ -1,0 +1,75 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFDesktopClient"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="WPFDesktopClient.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000">
+    <Grid>
+
+        <Label Content="1. Generator identification" HorizontalAlignment="Left" Margin="511,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Generator Id:" HorizontalAlignment="Left" Margin="511,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Repaired:" HorizontalAlignment="Left" Margin="511,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type number:" HorizontalAlignment="Left" Margin="511,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.842,0.423"/>
+        <Label Content="Seriral number:" HorizontalAlignment="Left" Margin="511,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Running hours:" HorizontalAlignment="Left" Margin="511,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Installation date:" HorizontalAlignment="Left" Margin="511,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Appllication:" HorizontalAlignment="Left" Margin="511,230,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,53,0,0" Name="genId" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="654,83,0,0" Name="repCombox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,113,0,0"  Name="typNr" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,143,0,0" Name="serNr" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,173,0,0" Name="runH" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,203,0,0" Name="instDa" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,233,0,0" Name="appl" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="2. Product identification" HorizontalAlignment="Left" Margin="511,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product Id:" HorizontalAlignment="Left" Margin="511,290,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product type:" HorizontalAlignment="Left" Margin="511,320,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product serial number:" HorizontalAlignment="Left" Margin="511,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.842,0.423"/>
+        <Label Content="Invoice number:" HorizontalAlignment="Left" Margin="511,380,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,293,0,0" Name="proId" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,323,0,0" Name="proTy" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,353,0,0" Name="proSerNr" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,383,0,0" Name="invNr" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="3. Error description/reson for return" HorizontalAlignment="Left" Margin="511,410,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="511,440,0,0" Name="erDes" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+        <Label Content="4. Additional information" HorizontalAlignment="Left" Margin="511,470,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="511,500,0,0" Name="add" TextWrapping="Wrap" VerticalAlignment="Top" Width="263"/>
+
+        <Label Content="5. Customer data" HorizontalAlignment="Left" Margin="511,530,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Id:" HorizontalAlignment="Left" Margin="511,560,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company name:" HorizontalAlignment="Left" Margin="511,590,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address:" HorizontalAlignment="Left" Margin="511,620,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.842,0.423"/>
+        <Label Content="Company contact:" HorizontalAlignment="Left" Margin="511,650,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="511,680,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telephone:" HorizontalAlignment="Left" Margin="511,710,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,563,0,0" Name="cumId" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,593,0,0"  Name="comNa" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,623,0,0" Name="addr" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,653,0,0" Name="comCon" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,683,0,0" Name="email" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="654,713,0,0" Name="telep" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="Generator management GUI" FontSize="28" VerticalAlignment="Top" />
+        <DataGrid HorizontalAlignment="Left" Height="383" Margin="20,92,0,0" VerticalAlignment="Top" Width="450" Name="repairedGenData" SelectionChanged="repairedGenData_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Generator ID" Binding="{Binding Id}"  Width="150"/>
+                <DataGridTextColumn Header="Type Number" Binding="{Binding TypeNumber}" Width="150"/>
+                <DataGridTextColumn Header="Repaired" Binding="{Binding IsRepaired}" Width="150"/>
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </Style>
+                
+            </DataGrid.Resources>
+        </DataGrid>
+        <Button Name="upBtn"  Content="Update" HorizontalAlignment="Left" Margin="834,207,0,0" VerticalAlignment="Top" Width="92" Height="41" Background="LawnGreen" FontSize="14" FontWeight="SemiBold" Click="upBtn_Click"/>
+        <Label Name="UpLabel" HorizontalAlignment="Left" Margin="70,530,0,0" VerticalAlignment="Top" Width="299"/>
+    </Grid>
+</Window>
