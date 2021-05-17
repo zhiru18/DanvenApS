@@ -43,13 +43,15 @@ namespace WPFDesktopClient {
             DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator.ContainerFromIndex(dataGrid.SelectedIndex);
             if (row != null) {
                 UpLabel.Content = "";
-                DataGridCell RowColumn = dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
-                string id = ((TextBlock)RowColumn.Content).Text;
+                DataGridCell RowColumn0 = dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
+                DataGridCell RowColumn1 = dataGrid.Columns[1].GetCellContent(row).Parent as DataGridCell;
+                DataGridCell RowColumn2 = dataGrid.Columns[2].GetCellContent(row).Parent as DataGridCell;
+                string id = ((TextBlock)RowColumn0.Content).Text;
                 int generatorId = Int32.Parse(id);
                 ClientGenerator clientGenerator = generatorController.GetById(generatorId);
-                genId.Text = clientGenerator.Id + "";
-                repCombox.Text = clientGenerator.IsRepaired.ToString();
-                typNr.Text = clientGenerator.TypeNumber;
+                genId.Text = id;
+                repCombox.Text = ((TextBlock)RowColumn2.Content).Text;
+                typNr.Text = ((TextBlock)RowColumn1.Content).Text;
                 serNr.Text = clientGenerator.SerialNumber;
                 runH.Text = clientGenerator.RunningHours;
                 instDa.Text = clientGenerator.InstallationDate;
@@ -70,40 +72,45 @@ namespace WPFDesktopClient {
         }
 
         private void upBtn_Click(object sender, RoutedEventArgs e) {
-            ClientCustomer clientCustomer = new ClientCustomer {
-                Id = Int32.Parse(cumId.Text),
-                CompanyName = comNa.Text,
-                CompanyAddress = addr.Text,
-                ContactPersonName = comCon.Text,
-                Email = email.Text,
-                Telephone = telep.Text
-            };
+            if (genId.Text != "") {
+                ClientCustomer clientCustomer = new ClientCustomer {
+                    Id = Int32.Parse(cumId.Text),
+                    CompanyName = comNa.Text,
+                    CompanyAddress = addr.Text,
+                    ContactPersonName = comCon.Text,
+                    Email = email.Text,
+                    Telephone = telep.Text
+                };
 
-            ClientProduct clientProduct = new ClientProduct {
-                Id = Int32.Parse(proId.Text),
-                ProductType = proTy.Text,
-                ProductSerialNumber = proSerNr.Text,
-                InvoiceNumber = invNr.Text
-            };
+                ClientProduct clientProduct = new ClientProduct {
+                    Id = Int32.Parse(proId.Text),
+                    ProductType = proTy.Text,
+                    ProductSerialNumber = proSerNr.Text,
+                    InvoiceNumber = invNr.Text
+                };
 
-            ClientGenerator clientGenerator = new ClientGenerator {
-                Id = Int32.Parse(genId.Text),
-                IsRepaired = bool.Parse(repCombox.Text),
-                TypeNumber = typNr.Text,
-                SerialNumber = serNr.Text,
-                RunningHours = runH.Text,
-                InstallationDate = instDa.Text,
-                GeneratorApplication = appl.Text,
-                ErrorDescription = erDes.Text,
-                AdditionalInformation = add.Text,
-                Customer = clientCustomer,
-                Product = clientProduct
-            };
-            ClientGenerator generator = generatorController.UpdateGenerator(clientGenerator);
-            if (generator != null) {
-                UpLabel.Foreground = Brushes.Green;
-                UpLabel.Content = "Generator is upadteded " + "Generator Id:" + generator.Id + "Generator Type:" + generator.TypeNumber + clientGenerator.IsRepaired.ToString();
-                UpdateTable();
+                ClientGenerator clientGenerator = new ClientGenerator {
+                    Id = Int32.Parse(genId.Text),
+                    IsRepaired = bool.Parse(repCombox.Text),
+                    TypeNumber = typNr.Text,
+                    SerialNumber = serNr.Text,
+                    RunningHours = runH.Text,
+                    InstallationDate = instDa.Text,
+                    GeneratorApplication = appl.Text,
+                    ErrorDescription = erDes.Text,
+                    AdditionalInformation = add.Text,
+                    Customer = clientCustomer,
+                    Product = clientProduct
+                };
+                ClientGenerator generator = generatorController.UpdateGenerator(clientGenerator);
+                if (generator != null) {
+                    UpLabel.Foreground = Brushes.Green;
+                    UpLabel.Content = "Generator is upadteded " + "Generator Id:" + generator.Id + "Generator Type:" + generator.TypeNumber + clientGenerator.IsRepaired.ToString();
+                    UpdateTable();
+                } else {
+                    UpLabel.Foreground = Brushes.Red;
+                    UpLabel.Content = "Input valid Generator Id or Product Id or Customer Id!";
+                }             
             } else {
                 UpLabel.Foreground = Brushes.Red;
                 UpLabel.Content = "Input valid Generator Id or Product Id or Customer Id!";
