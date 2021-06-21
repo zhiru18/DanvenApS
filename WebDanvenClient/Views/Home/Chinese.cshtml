@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Chinese";
+}
+
+@Styles.Render("~/Content/Homestyle.css")
+
+<h4>
+
+    <label style=" margin-left:990px" onclick="location.href='@Url.Action("Index","Home")'">
+        英文
+    </label>
+    <label style="float:right" onclick="location.href='@Url.Action("Chinese","Home")'">
+        中文
+    </label>
+
+
+</h4>
+
+
+<body>
+    <div class="top" style="background-image: url('@Url.Content("~/Photoes/decorative-water-wave-background_23-2147608380.jpg")')">
+        <text x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+            <h3>清洁和安全的控制解决方案   <br />并防止细菌 </h3>
+            <br />
+
+            欢迎走进 Danven ApS，我们提供天然无毒的预防和控制解决方案   <br />
+            水系统和表面上的细菌。 我们的消毒装置和内部消毒液，<br />
+            NEUTHOX®，共同消灭细菌，包括军团菌，快速行动消灭细菌 <br />
+            被称为生物膜的繁殖地.
+        </text>
+        <br />
+        <br />
+        <div class="button">
+            <input type="button" style="background-color: aquamarine" value="联系我们" onclick="location.href='@Url.Action("Contact","Home")'" />
+            <input type="button" value="我们的产品" onclick="location.href='@Url.Action("ProductsCn","Home")'" />
+        </div>
+
+    </div>
+    <div class="bottom">
+        <img src="~/Photoes/b13.png" alt="Girl in a jacket" width="965" height="350" style="position:relative; top:10px">
+        <br />
+        <h3 style="fill:aquamarine">
+            DCW 解决方案的优势：
+        </h3>
+        <br />
+
+        <text x="0" y="20" font-family="Verdana" font-size="36" fill="black">
+
+            最少的维护：不需要持续的日常维护<br />
+            经济利益：节约能源并减少管理费用<br />
+            预防细菌：经过验证的消除细菌的方法<br />
+            现代技术：享受简单的设置和轻松的维护<br />
+            低成本：将运营成本保持在最低水平<br />
+            保护环境：环保、无毒、解决方案
+        </text>
+    </div>
+
+</body>
+
+

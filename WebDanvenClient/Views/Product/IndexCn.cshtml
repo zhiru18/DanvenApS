@@ -1,0 +1,253 @@
+﻿@model WebDanvenClient.Models.Product
+
+@{
+    ViewBag.Title = "产品介绍";
+}
+@Styles.Render("~/Content/ProductView.css")
+
+<h2>
+    @ViewBag.Title
+</h2>
+
+@if (ViewBag.Situation < 1) {
+    <body>
+        <div class="left">
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 1})'">
+                    标准系列
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 2})'">
+                    低氮系列
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                        style=" background-color:steelblue;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 3})'">
+                    园艺系列
+                </button>
+            </div>
+        </div>
+    </body>
+
+} else if (ViewBag.Situation == 1) {
+
+    <body>
+        <div class="left">
+            <div class="topLeft">
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("StandardSeriesCn", "Product", new {Id = @b })'">@Model.products[i]</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 2})'">
+                   低氮系列
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 3})'">
+                    园艺系列
+                </button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="~/Photoes/prod1.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+            <br />
+            <br />
+            <br />
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                标准系列
+            </h3>
+            <br />
+            <br />
+            <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                DCW次氯酸发生器——标准系列
+                <br />
+                标准系列机组是用0.5%的饱和盐水和99.5%的软化水
+                <br />
+                混合后进行电解。根据各型号机组生产能力的
+                <br />
+                的不同，广泛适用于医疗行业、食品加工等各
+                <br />
+                个领域的杀菌消毒。
+            </h4>
+            <div class="bottomLeft">
+                @for (int i = 0; i < Model.products.Count; i++) {
+                    int b = i + 1;
+                    <a href='@Url.Action("StandardSeriesCn", "Product", new { Id = 1 })' target="_blank">
+                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                            @Model.products[i]型号 机组参数表
+                        </h3>
+                    </a>
+                    <br />
+                }
+            </div>
+        </div>
+    </body>
+} else if (ViewBag.Situation == 2) {
+    <body>
+        <div class="left">
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 1})'">
+                    标准系列
+                </button>
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("LowChlorineSeriesCn", "Product", new {Id = @b })'">
+                                    @Model.products[i]
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 3})'">
+                    园艺系列
+                </button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="~/Photoes/prod3.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+            <br />
+            <br />
+            <br />
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                低氮系列
+            </h3>
+            <br />
+            <br />
+            <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                DCW次氯酸发生器——低氯系列
+                <br />
+                低氯系列机组是用0.3%的饱和盐水和99.7%的软化水
+                <br />混合后进行电解，主要服务于循环水系统
+                <br />在避免腐蚀管路的情况下有效杀灭各种病原微生物，
+                <br />清除生物膜及藻类并抑制其再生。适用于冷却塔、
+                <br />酒店及公共建筑热水系统、游泳池、景观池塘、
+                <br />CIP管线和巴氏杀菌机等各个领域的杀菌消毒。
+            </h4>
+            <div class="bottomLeft2">
+                @for (int i = 0; i < Model.products.Count; i++) {
+                    int b = i + 1;
+                    <a href='@Url.Action("LowChlorineSeriesCn", "Product", new { Id = @b })' target="_blank">
+                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                            @Model.products[i]型号 机组参数表
+                        </h3>
+                    </a>
+                    <br />
+                }
+            </div>
+        </div>
+    </body>
+
+} else if (ViewBag.Situation == 3) {
+    <body>
+        <div class="left">
+            <div class="topLeft">
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 1})'">
+                    标准系列
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                        style=" background-color:cadetblue;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 2})'">
+                    低氮系列
+                </button>
+                <br />
+                <br />
+                <div class="dropdown">
+                    <div class="dropdown" style="display:inline-block">
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" value="@Model.Id" runat="server"
+                                style="background-color: steelblue; width:155px; height:35px">
+                            @Model.Name
+                        </button>
+                        <ul class="dropdown-menu">
+                            @for (int i = 0; i < Model.products.Count; i++) {
+                                int b = i + 1;
+                                <li onclick="location.href='@Url.Action("HorticulturalSeriesCn", "Product", new {Id = @b })'">
+                                    @Model.products[i]
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+        <div class="right">
+            <img src="~/Photoes/prod2.png" width="400" height="300" style=" text-align: center;
+        position: relative; top:50px">
+            <br />
+            <br />
+            <br />
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style=" text-align: center">
+                园艺系列
+            </h3>
+            <br />
+            <br />
+            <h4 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+                DCW次氯酸发生器——园艺系列
+                <br />
+                园艺系列机组以氯化钾为原料，不仅生产出具有强效杀菌能力的次氯酸溶液，
+                <br />还能为植物生长提供必需的钾，起到增大植物根系和叶片面积、提高产量、
+                <br />缩短生产周期的效果。适用于园艺灌溉系统杀菌和空间喷雾消毒等。             
+            </h4>
+            <div class="bottomLeft">
+                @for (int i = 0; i < Model.products.Count; i++) {
+                    int b = i + 1;
+                    <a href='@Url.Action("HorticulturalSeriesCn", "Product", new { Id = @b })' target="_blank">
+                        <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black">
+
+                            @Model.products[i]型号 机组参数表
+                        </h3>
+                    </a>
+                    <br />
+                }
+            </div>
+        </div>
+    </body>
+
+
+}
+
+

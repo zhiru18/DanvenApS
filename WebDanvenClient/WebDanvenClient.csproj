@@ -162,6 +162,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Photoes\b13.png" />
     <Content Include="Photoes\backgrund.png" />
     <Content Include="Photoes\dcw.bmp" />
     <Content Include="Photoes\dcwdanven.png" />
@@ -186,6 +187,15 @@
     <Content Include="Photoes\prod3-2.png" />
     <Content Include="Photoes\prod3-2T.png" />
     <Content Include="Photoes\prod3.png" />
+    <Content Include="Photoes\roujiamo2.jpg" />
+    <Content Include="Photoes\t05stdt.png" />
+    <Content Include="Photoes\t15stdt.png" />
+    <Content Include="Photoes\t25stdt.png" />
+    <Content Include="Photoes\Th1.png" />
+    <Content Include="Photoes\Th2.png" />
+    <Content Include="Photoes\Tlc05t.png" />
+    <Content Include="Photoes\Tlc15t.png" />
+    <Content Include="Photoes\Tlc25t.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Connected Services\GeneratorServiceReference\service.wsdl" />
@@ -234,6 +244,15 @@
     <Content Include="Views\Product\HorticulturalSeries.cshtml" />
     <Content Include="Views\Eftersalgsservice\Index.cshtml" />
     <Content Include="Views\Eftersalgsservice\SubSuccess.cshtml" />
+    <Content Include="Views\Home\Chinese.cshtml" />
+    <Content Include="Views\Home\ProductsCn.cshtml" />
+    <Content Include="Views\Product\IndexCn.cshtml" />
+    <Content Include="Views\Product\StandardSeriesCn.cshtml" />
+    <Content Include="Views\Product\LowChlorineSeriesCn.cshtml" />
+    <Content Include="Views\Product\HorticulturalSeriesCn.cshtml" />
+    <Content Include="Views\Home\EftersalgsserviceCn.cshtml" />
+    <Content Include="Views\Eftersalgsservice\IndexCn.cshtml" />
+    <Content Include="Views\Eftersalgsservice\SubSuccessCn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

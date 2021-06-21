@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "EftersalgsserviceCn";
+}
+
+<h2>售后服务</h2>
+@Styles.Render("~/Content/Eftersalgsservice.css")
+<body>
+    <div class="left">
+        <h3 style="color:white">Eftersalgsservice</h3>
+        <div class="topLeft">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("EftersalgsserviceCn", "Home", new {Id = 1})'">
+                结果承诺
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("EftersalgsserviceCn", "Home", new {Id = 2})'">
+                服务承诺
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Eftersalgsservice")'">
+                维修申请
+            </button>
+        </div>
+    </div>
+    @if (ViewBag.Situation < 1) {
+
+    } else if (ViewBag.Situation == 1) {
+        <div class="right">
+            <h3 style="color:white">
+                结果承诺
+            </h3>
+            <br />
+            <h4>
+                <br />1.杀菌强效广谱，快速杀灭各种细菌、真菌、病毒、芽孢等多种微生物;
+                <br />
+                <br />2.彻底清除生物膜并抑制其再生成;
+                <br />
+                <br />3. 使用低浓度DCW次氯酸溶液便可达到行业标准
+                <br />(30ppm的DCW次氯酸溶液优于100ppm的次氯酸钠溶液的杀菌效果);
+                <br />
+                <br />4.DCW次氯酸溶液成本低于0.03元/升(包括水费、电费、原料盐的费用);
+                <br />
+                <br />5.溶液不会对人体和环境造成危害，杀菌后自然降解成盐和水，即使泄漏仍还原成盐和水;
+                <br />
+                <br />6. 溶液腐蚀性低，1ppm的DCW次氯酸溶液对金属的腐蚀性与自来水相当;
+            </h4>
+        </div>
+    } else if (ViewBag.Situation == 2) {
+        <div class="right">
+            <h3 style="color:white">
+                服务承诺
+            </h3>
+            <br />
+            <h4>
+                <br />1. 安装仅需要1天时间;
+                <br />
+                <br />2. 整机为丹麦进口质保期为1年，电解槽质保期为3年
+                <br />
+                <br />3. 质保期内免费2次上门维护;
+                <br />
+                <br /> 4.设备发生故障时2小时内给予明确回复，4小时内为客户提供解决方案。
+                <br />对于影响设备正常运行的故障，售后服务人员24小时内达到现场并在短时间内解决问题。
+            </h4>       |
+        </div>
+    }
+</body>
+

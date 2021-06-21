@@ -3,9 +3,17 @@
 }
 @Styles.Render("~/Content/Homestyle.css")
 
-<h2>
-    @ViewBag.Title
-</h2>
+<h4>
+
+    <label style=" margin-left:990px" onclick="location.href='@Url.Action("Index","Home")'">
+            English
+        </label>
+        <label style="float:right" onclick="location.href='@Url.Action("Chinese","Home")'">
+            Chinese
+        </label>
+       
+  
+</h4>
 
 
 <body>

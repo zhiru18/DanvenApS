@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "产品系列";
+}
+@Styles.Render("~/Content/Products.css")
+<h2>
+    @ViewBag.Title
+</h2>
+<body>
+    <div class="left">
+        <div class="topLeft2">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 1})'">
+                标准系列
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue; width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 2})'">
+                低氮系列
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:steelblue;  width:155px;height:35px" onclick="location.href='@Url.Action("IndexCn", "Product", new {Id = 3})'">
+                园艺系列
+            </button>
+        </div>
+    </div>
+    <div class="topLeft">
+
+        <img src="~/Photoes/prod1.png" width="450" height="350" style="text-align: center">
+        <a href='@Url.Action("IndexCn", "Product", new {Id = 1 })' target="_blank">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:475px">
+                标准系列
+            </h3>
+        </a>
+
+    </div>
+    <div class="topRight">
+        <img src="~/Photoes/prod3.png" width="450" height="350" style="text-align: center">
+        <br />
+        <a href='@Url.Action("IndexCn", "Product", new {Id = 2})' target="_blank">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:450px">
+                低氮系列
+            </h3>
+        </a>
+    </div>
+    <div class="bottomLeft">
+        <img src="~/Photoes/prod2.png" width="450" height="350" style="text-align: center">
+        <br />
+        <a href='@Url.Action("IndexCn", "Product", new {Id = 3 })' target="_blank">
+            <h3 x="0" y="20" font-family="Verdana" font-size="30" fill="black" style="position:relative; top:450px">
+                园艺系列
+            </h3>
+        </a>
+    </div>
+    <div class="bottomRight">
+
+    </div>
+
+
+</body>

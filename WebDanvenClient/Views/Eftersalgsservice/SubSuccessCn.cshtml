@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "SubSuccessCn";
+}
+
+<h2>你已经成功提交售后服务申请表！</h2>
+@Styles.Render("~/Content/Eftersalgsservice.css")
+<body>
+    <div class="left">
+        <h3 style="color:white">售后服务</h3>
+        <div class="topLeft">
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 1})'">
+                结果承诺
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black; width:155px;height:35px" onclick="location.href='@Url.Action("Eftersalgsservice", "Home", new {Id = 2})'">
+                服务承诺
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" runat="server"
+                    style=" background-color:black;  width:155px;height:35px" onclick="location.href='@Url.Action("Index", "Eftersalgsservice")'">
+                售后服务
+            </button>
+        </div>
+    </div>
+    <div class="right">
+
+        <table width="80%" border="1" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#CCFFCC" cellpadding="4" align="left" style="position:relative; bottom:20px; top:20px">
+            <tr>
+                <td colspan="2"> <div align="left"><label>1. 发生器识别</label></div> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>   型号: </td>
+                <td><input type="text" name="typeNumber" id="typeNumber" value="@Request["typeNumber"]" /> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>  序列号:  </td>
+                <td>
+                    <input type="text" name="serialNumber1" id="serialNumber1" value="@Request["serialNumber1"]" />
+                </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>  运转时间:</td>
+                <td>
+                    <input type="text" name="runningHours" id="runningHours" value="@Request["runningHours"]" />
+                </td>
+            </tr>
+            <tr>
+                <td>  安装日期: </td>
+                <td>
+                    <input type="text" name="installationDate" id="installationDate" value="@Request["installationDate"]" />
+                </td>
+            </tr>
+            <tr>
+                <td> 申请:</td>
+                <td>
+                    <input type="text" name="application" id="application" value="@Request["application"]" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"> <div align="left"><label>2. 产品识别</label></div> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>   产品型号: </td>
+                <td>   <input type="text" name="productType" id="productType" value="@Request["productType"]" /> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>   序列号: </td>
+                <td>  <input type="text" name="serialNumber2" id="serialNumbe2" value="@Request["serialNumber2"]" /> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>    发票号: </td>
+                <td>  <input type="text" name="invoiceNumber" id="invoiceNumber" value="@Request["invoiceNumber"]" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"> <div align="left"><label><span style="color:red;">* </span>3. Error description / reason for return</label></div> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="descriptionReason" id="descriptionReason" value="@Request["descriptionReason"]" style="width:2000px; height:100px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <div align="left"><label> 4. 额外信息</label></div> </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="additionalInformation" id="additionalInformation" value="@Request["additionalInformation"]" style="width:2000px; height:100px" />
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <div align="left"><label>  5.  顾客数据</label></div> </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>   公司名称: </td>
+                <td>   <input type="text" name="companyName" id="companyName" value="@Request["companyName"]" /> </td>
+            </tr>
+            <tr>
+                <td>  地址: </td>
+                <td>
+                    <input type="text" name="address" id="address" value="@Request["address"]" />
+                </td>
+            </tr>
+            <tr>
+                <td> 公司联系人:  </td>
+                <td>
+                    <input type="text" name="companyContact" id="companyContact" value="@Request["companyContact"]" />
+                </td>
+            </tr>
+            <tr>
+                <td> 邮箱:  </td>
+                <td>
+                    <input type="text" name="email" id="email" value="@Request["email"]" />
+                </td>
+            </tr>
+            <tr>
+                <td> <span style="color:red;">* </span>电话. (直播): </td>
+                <td>   <input type="text" name="telephoneNo" id="telephoneNo" value="@Request["telephoneNo"]" /></td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+
+
+
