@@ -64,7 +64,7 @@ namespace WebDanvenClient.Controllers
                 };
 
                 ClientGenerator insertGenerator= controlGenerator.CreateGenerator(clientGenerator);
-                SendEmail(values);
+                //SendEmail(values);
                 if (insertGenerator == null) {
                     ViewBag.Message = "Product type or Invoice number or Telephone No. is wrong, you should check and fill again!";
                     return View();
